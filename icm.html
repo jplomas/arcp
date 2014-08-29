@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Northwest ARCP</title>
+	<script src="js/jquery-1.7.2.min.js"></script>
+
+	<script src="js/jquery-ui-1.8.22.custom.min.js"></script>
+	<!-- <link rel="stylesheet" href="css/hot-sneaks/jquery-ui-1.8.22.custom.css"> -->
+	<link type="text/css" href="css/icm.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" type="text/css" >
+<link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.css" type="text/css" >
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
+<!-- Opera Speed Dial Favicon -->
+  <link rel="icon" type="image/png" href="/speeddial-160px.png" />
+      
+<!-- Standard Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+<!-- For iPhone 4 Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png">
+
+<!-- For iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png">
+
+<!-- For iPhone: -->
+  <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png">
+
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+	<script>
+
+	var activeYear;
+	$(function() {
+		$( "#accordion" ).accordion({active:false,collapsible: true,clearStyle:true,
+		change: function(event, ui) { 
+				hideIrrev();
+   		 }
+		});
+	});
+
+	function informed()
+	{
+		var fbar = document.getElementById('informMe').value;
+		var dURL = "inform.php?address=";
+      var posting = $.post(dURL, { address: fbar } );
+      posting.done(function(data) {
+      	var st = data;
+      	      	// st = $('#inf1').html();
+      	      	//alert(st);
+      	      	if (st == "OK") {
+      	      		$('#inf1').html("<i class='icon-ok'></i> You\'ll be informed if this document changes");
+      	      		$('#inf2').hide("fast");
+      				$('#inf3').hide("fast");
+      	      	}
+      	      	if (st == "ALREADY") {
+      	      		$('#inf1').html("<i class='icon-ok'></i> You are already on the mailing list.");
+      	      		$('#inf2').hide("fast");
+      	      		$('#inf3').hide("fast");
+      	      	}
+      	      	if (st == "\n\nFAIL" || st == "FAIL") {
+      	      		$('#inf1').html("<i class='icon-remove'></i> An error occurred. Please email <a href='mailto:jp.lomas@gmail.com'>jp.lomas@gmail.com</a> to be added to the list of people emailed when this document changes.");
+      	      		$('#inf2').hide("fast");
+      				$('#inf3').hide("fast");
+      	      	}  
+      	      	if (st == "INVALID") {
+      	      		$('#inf1').html("<i class='icon-remove'></i> Invalid email address entered. Please check &amp; retry.");
+      	      	}        	    	
+      });
+      
+		// 
+
+	}
+
+	function hideIrrev() {
+		   $('div.CT1').hide("fast");
+		   $('div.CT2').hide("fast");
+		   $('div.CT2plus').hide("fast");
+		   $('div.ST3').hide("fast");
+		   $('div.ST4').hide("fast");
+		   $('div.ST5').hide("fast");
+		   $('div.ST6').hide("fast");
+		   $('div.ST7').hide("fast");
+		   if (activeYear == 1) {
+		   	$('div.CT1').show("fast");
+		   }
+		   if (activeYear == 2) {
+		   	$('div.CT2').show("fast");
+		   }
+		   if (activeYear == 3) {
+		   	$('div.CT2plus').show("fast");
+		   }
+		   if (activeYear == 4) {
+		   	$('div.ST3').show("fast");
+		   }
+		   if (activeYear == 5) {
+		   	$('div.ST4').show("fast");
+		   }
+		   if (activeYear == 6) {
+		   	$('div.ST5').show("fast");
+		   }
+		   if (activeYear == 7) {
+		   	$('div.ST6').show("fast");
+		   }
+		   if (activeYear == 8) {
+		   	$('div.ST7').show("fast");
+		   }
+		   if (activeYear == 10) {
+		   	$('div.CT1').show("fast");
+		   	$('div.CT2').show("fast");
+		   	$('div.CT2plus').show("fast");
+		   	$('div.ST3').show("fast");
+		   	$('div.ST4').show("fast");
+		   	$('div.ST5').show("fast");
+		   	$('div.ST6').show("fast");
+		   	$('div.ST7').show("fast");
+		   }
+	}
+
+
+	function goJP(yearR) {
+		
+		window.activeYear = yearR;
+
+		$("#cows").hide("fast");
+		$("#NW").show("fast", function() {
+		
+		hideIrrev();
+
+		$('#CT1').removeClass("btn-primary");
+		$('#CT2').removeClass("btn-primary");
+		$('#CT2plus').removeClass("btn-primary");
+		$('#ST3').removeClass("btn-primary");
+		$('#ST4').removeClass("btn-primary");
+		$('#ST5').removeClass("btn-primary");
+		$('#ST6').removeClass("btn-primary");
+		$('#ST7').removeClass("btn-primary");
+		if (yearR==1) {
+			$('#CT1').addClass("btn-primary");
+		}
+		if (yearR==2) {
+			$('#CT2').addClass("btn-primary");
+		}
+		if (yearR==3) {
+			$('#CT2plus').addClass("btn-primary");
+		}
+		if (yearR==4) {
+			$('#ST3').addClass("btn-primary");
+		}
+		if (yearR==5) {
+			$('#ST4').addClass("btn-primary");
+		}
+		if (yearR==6) {
+			$('#ST5').addClass("btn-primary");
+		}
+		if (yearR==7) {
+			$('#ST6').addClass("btn-primary");
+		}
+		if (yearR==8) {
+			$('#ST7').addClass("btn-primary");
+		}
+		});
+
+
+	}
+	function arrgh() {
+		$("#NW").hide("fast");		
+	}
+	</script>
+	<style>
+	@media (max-width: 767px) { 
+		.hero-unit h1 { 
+			font-size: 30px;
+			} 
+		}
+	body {
+    margin-top: 20px;
+  	}
+	ul.double {
+    margin-left: 5px;
+    margin-right: 0px;
+    padding-left: 35px;
+    padding-right: 0px;
+	}
+	ol.double {
+    margin-left: 5px;
+    margin-right: 0px;
+    padding-left: 35px;
+    padding-right: 0px;
+	}
+	code.year {
+		color: #14A;
+		border-color: #14F;
+		background-color: #ACF;
+	}
+	</style>
+</head>
+<body onload="arrgh()">
+	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<div class="container-fluid">
+	<div class="hero-unit">
+  <h1>ARCP Requirements</h1>
+  <p>Northwest School of Intensive Care Medicine</p>
+  <p>&nbsp;</p>
+  <h6>Last update: XXXXX 2014 &nbsp; <a href="#myModal" role="button" class="btn btn-small" data-toggle="modal"><i class="icon-arrow-right"></i> See update history</a></h6>
+  <p>&nbsp;</p><p>
+  <h6><div id="inf1">Want to be emailed when major changes are made?</div><div id="inf2"><br>
+  <small>Just enter your email address here</small></div></h6>
+  <div id="inf3" class="input-append">
+  <input class="span4" id="informMe" type="text" placeholder="email@address.com">
+  <button class="btn btn-default" id="informMeBut" type="button" onClick="informed()">Keep me informed</button>
+</div>
+</p>
+  <p>&nbsp;</p>
+  <div class="fb-like" data-href="http://www.eanaesthesia.com/arcp" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div>
+  <br>
+  <!-- Place this tag where you want the +1 button to render. -->
+<div class="g-plusone" data-size="medium"></div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+</div></div>
+
+<div class="container-fluid">
+	Completion of training in intensive care medicine involves satisfying the requirements of the North West School of ICM, the Faculty of ICM and the General Medical Council. The introduction of both a new Curriculum and an electronic Portfolio has led to changes in the way trainees collect and present evidence for review at ARCP.
+	<br><br>
+	The aim of this document is to explicitly state the requirements for a satisfactory outcome at ARCP.  This benefits trainees, who have a clear blueprint of their requirements; educational supervisors, who are able to offer consistent guidance; and the ARCP panel, who are presented evidence in a consistent format.  As a reference, the ARCP Panel A use this proforma to guide outcome: <b>!!! NOT LIVE !!!</b><a href="131106.Panel A Proforma.Anaesthetics.doc" class="btn btn-mini">.doc</a> <a href="131106.Panel A Proforma.Anaesthetics.pdf" class="btn btn-mini">.pdf</a>
+	<br><br>
+	It may well be that in the future the ePortfolio is closed to changes by trainees in the days immediately prior to their ARCP date to allow the panel members to review their evidence before meeting.  It is strongly recommended that trainees keep their ePortfolio up-to-date and stay on top of these requirements.
+	<br><br>
+<!-- Re-enable when videos are available...
+	<i class="icon-file"></i><i class="icon-upload"></i>&nbsp;
+	Some evidence requires uploading to the ePortfolio as PDF/Word documents. Help to do this is available [here - soon]
+	<br><br> -->
+	<p>
+<!-- <button id="CT1" 		class="btn" onClick="goJP(1)">CT1</button>
+<button id="CT2" 		class="btn" onClick="goJP(2)">CT2</button>
+<button id="CT2plus" 	class="btn" onClick="goJP(3)">CT2+</button> -->
+<button id="ST3" 		class="btn" onClick="goJP(4)">ST3</button>
+<button id="ST4" 		class="btn" onClick="goJP(5)">ST4</button>
+<button id="ST5" 		class="btn" onClick="goJP(6)">ST5</button>
+<button id="ST6" 		class="btn" onClick="goJP(7)">ST6</button>
+<button id="ST7" 		class="btn" onClick="goJP(8)">ST7</button>
+<button id="STC TESTING" class="btn btn-warning" onClick="goJP(10)">Show All</button>
+<h4 id="cows">
+Choose your year of training.<br><br><br><br><br><br>
+</h4>
+</div>
+<div class="container-fluid" id="NW">
+<div id="accordion">
+	<!-- <h3><a href="#">Workplace Based Assessments</a></h3>
+	<div>
+	<p>
+	<strong>We haven't looked at this section yet!</strong><br><br>
+		<strong>Item</strong><blockquote>DOPs, CEX, CBDs</blockquote>
+		<strong>Format</strong><blockquote>via ePortfolio assessment ideally</blockquote>
+		<strong>Title</strong><blockquote>If uploading scanned version:<br><code>WBA 2012 - DOPS - Title</code></blockquote>
+	</p><p>
+	<div class="CT1 CT2 CT2plus">
+	
+	<code class="year">CT1</code><code class="year">CT2</code><code class="year">CT2+</code>
+		<p>
+		<strong>Frequency</strong><blockquote>
+			8 DOPs per year<br>
+			4 CEX per year<br>
+			1 CBD per year<br>
+		</blockquote>
+		<br>
+		</p>
+	</div>
+	<div class="ST3 ST4">
+		<code class="year">ST3</code><code class="year">ST4</code>
+		<p>
+		<strong>Frequency</strong><blockquote>
+			8 DOPs per year<br>
+			4 CEX per year<br>
+			1 CBD per year<br>
+		</blockquote>
+		<br>
+		</p>
+	</div>
+	<div class="ST5 ST6 ST7">
+		<code class="year">ST5</code><code class="year">ST6</code><code class="year">ST7</code>
+		<p>
+		<strong>Frequency</strong><blockquote>
+			8 DOPs per year<br>
+			4 CEX per year<br>
+			1 CBD per year<br>
+		</blockquote>
+		<br>
+		</p>	
+		</div>	
+	</div> -->
+ 	<h3><a href="#">Unit of Training Sign-off & WBAs</a></h3>
+	<div>
+		<div class="CT1 CT2 CT2plus">
+			<strong>Unit of Training Sign-off Format</strong><blockquote>Only via ePortfolio</blockquote>
+		</div>
+		<div class="CT1">
+			<code class="year">CT1</code>
+			<h3>IAC</h3>
+			Successful completion of the Initial Assessment of Competency (IAC) requires the completion of the following Workplace Based Assessments (WBAs) from page B-94 of <a href="http://www.rcoa.ac.uk/system/files/TRG-CCT-AnnexB_1.pdf"><i class="icon-share-alt"></i></a><em>CCT in Anaesthetics - Annex B</em>:<br><br>
+			<ul class="double">
+				<li>5 x A-CEX
+				<table class="table table-condensed table-bordered table-striped">
+				<thead>
+					<th>Code&nbsp;Number</th><th>&nbsp;</th>
+				</thead>
+				<tbody>
+				<tr>
+				<td>IAC_A01</td>
+				<td>Preoperative assessment of a patient who is scheduled for a routine operating list [not urgent or emergency]</td>
+			</tr><tr>
+				<td>IAC_A02</td>
+				<td>Manage anaesthesia for a patient who is not intubated and is breathing spontaneously</td>
+			</tr><tr>
+				<td>IAC_A03</td>
+				<td>Administer anaesthesia for acute abdominal surgery</td>
+			</tr><tr>
+				<td>IAC_A04</td>
+				<td>Demonstrate Rapid Sequence Induction</td>
+			</tr><tr>
+				<td>IAC_A05</td>
+				<td>Recover a patient from anaesthesia</td>
+			</tr></tbody></table>
+		</li>
+				<li>8 x CBD
+				<table class="table table-condensed table-bordered table-striped">
+				<thead>
+					<th>Code&nbsp;Number</th><th>&nbsp;</th>
+				</thead>
+				<tbody>
+				<tr>
+				<td>IAC_C01</td>
+				<td>Discuss the steps taken to ensure correct identification of the patient, the operation and the side of operation</td>
+			</tr><tr>
+				<td>IAC_C02</td>
+				<td>Discuss how the need to minimise postoperative nausea and vomiting influenced the conduct of the anaesthetic</td>
+			</tr><tr>
+				<td>IAC_C03</td>
+				<td>Discuss how the airway was assessed and how difficult intubation can be predicted</td>
+			</tr><tr>
+				<td>IAC_C04</td>
+				<td>Discuss how the choice of muscle relaxants and induction agents was made</td>
+			</tr><tr>
+				<td>IAC_C05</td>
+				<td>Discuss how the trainee’s choice of post-operative analgesics was made</td>
+			</tr><tr>
+				<td>IAC_C06</td>
+				<td>Discuss how the trainee’s choice of post-operative oxygen therapy was made</td>
+			</tr><tr>
+				<td>IAC_C07</td>
+				<td>Discuss the problems emergency intra-abdominal surgery causes for the anaesthetist and how the trainee dealt with these</td>
+			</tr><tr>
+				<td>IAC_C08</td>
+				<td>Discuss the routine to be followed in the case of failed intubation</td>
+			</tr></tbody></table>
+
+				</li>
+				<li>6 x DOPS
+				<table class="table table-condensed table-bordered table-striped">
+				<thead>
+					<th>Code&nbsp;Number</th><th>&nbsp;</th>
+				</thead>
+				<tbody>
+				<tr>
+				<td>IAC_D01</td>
+				<td>Demonstrate functions of the anaesthetic machine</td>
+			</tr><tr>
+				<td>IAC_D02</td>
+				<td>Transfer a patient onto the operating table and position them for surgery [lateral, Lloyd Davis or lithotomy position]</td>
+			</tr><tr>
+				<td>IAC_D03</td>
+				<td>Demonstrate cardio-pulmonary resuscitation on a manikin</td>
+			</tr><tr>
+				<td>IAC_D04</td>
+				<td>Demonstrates technique of scrubbing up and donning gown and gloves</td>
+			</tr><tr>
+				<td>IAC_D05</td>
+				<td>Basic Competencies for Pain Management – manages PCA including prescription and adjustment of machinery</td>
+			</tr><tr>
+				<td>IAC_D06</td>
+				<td>Demonstrates the routine for dealing with failed intubation on a manikin</td>
+				</tr></tbody></table>
+				</li>
+			</ul>
+			<h3>The Basis of Anaesthetic Practice</h3>
+	    In addition to the IAC, <em>The Basis of Anaesthetic Practice</em> portion of the curriculum should be completed during CT1. This requires 8 Units Of Training (UoT) signed off in:
+	    <ul class="double">
+	    <li>Pre-operative assessment</li>
+	    <li>Premedication</li>
+	    <li>Induction of general anaesthesia</li>
+	    <li>Intra-operative care</li>
+	    <li>Post-operative and recovery room care</li>
+	    <li>Introduction to anaesthesia for emergency surgery</li>
+	    <li>Management of respiratory and cardiac arrest</li>
+	    <li>Control of infection</li>
+	    </ul>
+	    Each of these UoTs need 1 x DOPS, 1 x A-CEX and 1 x CBD, although the same WBA can be allocated to multiple UoTs where appropriate, including WBAs performed as part of the IAC.
+	    <br><br>
+	</div>
+	<div class="CT1 CT2 CT2plus">
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+	</div>
+		<div class="CT1 CT2 CT2plus">
+	    <h3>Basic Anaesthesia</h3>
+	    Over the course of basic training (CT1, CT2 and CT2+ if necessary), a total of 15 UoT Sign-offs are needed in:
+<ul class="double">
+	    <li>Airway management</li>
+	    <li>Critical incidents</li>
+	    <li>Day surgery</li>
+	    <li>General, urological and gynaecological surgery</li>
+	    <li>Head, neck, maxillo-facial and dental surgery</li>
+	    <li>Intensive care medicine</li>
+	    <li>Non-theatre</li>
+	    <li>Obstetrics</li>
+	    <li>Orthopaedic surgery</li>
+	    <li>Paediatrics (including Child Protection)</li>
+	    <li>Pain medicine</li>
+	    <li>Regional</li>
+	    <li>Sedation</li>
+	    <li>Transfer medicine</li>
+	    <li>Trauma and stabilisation</li>
+	    </ul>
+	    As per page B-98 of <a href="http://www.rcoa.ac.uk/system/files/TRG-CCT-AnnexB_1.pdf"><i class="icon-share-alt"></i></a><em>CCT in Anaesthetics - Annex B</em>, each of these UoTs requires 1 x DOPS, 1 x A-CEX and 1 x CBD except for <em>General, urological and gynaecological surgery</em>, which requires 1 x ALMAT in addition; and <em>Intensive care medicine</em>, which requires WBAs as determined by your module supervisor.
+	    <h3>Intensive care medicine</h3>
+	    <blockquote>	    	
+	    <a href="http://www.rcoa.ac.uk/system/files/TRG-CCT-AnnexF_1.pdf"><i class="icon-share-alt"></i></a><em> CCT in Anaesthetics - Annex F</em> states that for ARCP, trainees should submit:
+	    <ul class="double">
+	    	<li>WBAs</li>
+			<li>Evidence of number of procedures performed</li>
+			<li>Evidence to demonstrate that the unit can provide and trainee has been exposed to a suitable variety of experience, including details of patients trainee has played a significant part in managing (similar to anaesthetic logbook data)</li>
+			<li>Information from unit data collection (eg ICNARC)</li>
+			<li>Evidence of attendance at at least 1 Morbidity and Mortality meeting and 1 journal club.</li>
+			<li>A satisfactory educational supervisor/faculty tutors report</li>
+		</ul>
+	</blockquote>
+		</div>
+		<div class="ST3 ST4">
+		<code class="year">ST3</code>
+		<code class="year">ST4</code><br><br>
+		<strong>Items</strong>
+		<!-- One electronic Unit of Training (UoT) Sign-Off for each
+	    module undertaken in period since last ARCP.<br><br>  -->
+	   <blockquote>
+	    Over the course of intermediate training (ST3 and ST4), a total of 18 Unit of Training (UoT) Sign-offs are needed in:
+	    <!--   In order to be signed-off for a unit of training, evidence of achieving core learning outcomes as defined by the syllabus needs to be demonstrated in the form of:
+			<ol class="double">
+				<li>Workplace based assessments
+				<li>Sessional list
+				<li>Logbook summary
+			</ol> -->
+			<!-- 		</blockquote>
+		<strong>UoT Sign-off Format</strong><blockquote>Only via ePortfolio (training video available [here].</blockquote>
+	    <strong>WBA requirements</strong>
+	    <blockquote> -->
+	    <!-- 	The following units of training each need a minimum of 3 Workplace Based Assessments: 1xDOPS, 1xCBD & 1xCEX -->
+	    <ul class="double">
+	    <li>Airway Management</li>
+	    <li>Anaesthesia for neurosurgery, neuroradiology and neurocritical care</li>
+	    <li>Cardiothoracic anaesthesia and cardiothoracic critical care</li>
+	    <li>Critical incidents</li>
+	    <li>Day surgery</li>
+	    <li>General, urological and gynaecological surgery</li>
+	    <li>Head, neck, maxillo-facial and dental surgery</li>
+	    <li>Intensive care medicine</li>
+	    <li>Management of respiratory and cardiac arrest</li>
+	    <li>Non-theatre</li>
+	    <li>Obstetrics</li>
+	    <li>Orthopaedic surgery</li>
+	    <li>Paediatric</li>
+	    <li>Pain medicine</li>
+	    <li>Regional</li>
+	    <li>Sedation</li>
+	    <li>Trauma and stabilisation</li>
+	    <li>Transfer medicine</li>	
+		</ul>
+	</blockquote>
+	<strong>UoT Sign-off Format</strong><blockquote>Only via ePortfolio</blockquote>
+	<strong>WBA Guidance</strong><br>
+<blockquote>	    <a href="http://www.rcoa.ac.uk/system/files/TRG-CCT-AnnexC_1.pdf"><i class="icon-share-alt"></i></a><em> CCT in Anaesthesia: Annex C, page C-75</em>
+	    details the WBA requirements for each of these modules:
+	    <table class="table table-condensed table-bordered table-striped">
+	    	<thead><th width="40%">Module</th><th>WBAs</th></thead>
+	    	<tbody>
+	    		<tr>
+	    			<td>Airway Management <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD, 1 x DOPS and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Anaesthesia for neurosurgery, neuroradiology and neurocritical care</td>
+	    			<td>1 x A-CEX, 1 x DOPS and 1 x CBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Cardiothoracic anaesthesia and cardiothoracic critical care</td>
+	    			<td>1 x A-CEX, 1 x DOPS and 1 x CBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Critical incidents <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Day surgery <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>
+	    		<tr>
+	    			<td>General, urological and gynaecological surgery <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>	    			    			    			    	
+	    		<tr>
+	    			<td>Head, neck, maxillo-facial and dental surgery <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Intensive Care Medicine</td>
+	    			<td>As determined by your module supervisor. See below.</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Management of respiratory and cardiac arrest <i class="icon-exclamation-sign"></i></td>
+	    			<td>[<strong>either</strong> 1 x DOPS <strong>or</strong> current ALS/ATLS/APLS]</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Non-theatre <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and 1 x A-CEX</td>
+	    		</tr>	    			    			    			    	
+	    		<tr>
+	    			<td>Obstetrics</td>
+	    			<td>1 x A-CEX, 1 x DOPS and 1 x CBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Orthopaedic surgery <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Paediatric</td>
+	    			<td>1 x A-CEX, 1 x DOPS and 1 x CBD</td>
+	    		</tr>
+	    		<tr>
+	    			<td>Pain medicine</td>
+	    			<td>1 x A-CEX, 1 x DOPS and 1 x CBD</td>
+	    		</tr>	
+	    		<tr>
+	    			<td>Regional <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD, 1 x DOPS and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>		    		
+	    		<tr>
+	    			<td>Sedation <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>	
+	    		<tr>
+	    			<td>Transfer medicine <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>	    			    			    			    			 
+	    		<tr>
+	    			<td>Trauma and stabilisation <i class="icon-exclamation-sign"></i></td>
+	    			<td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td>
+	    		</tr>	    				    		   		
+	    	</tbody>
+	    </table>
+	    <i class="icon-exclamation-sign"></i> These modules form <em>General Duties</em>. For the whole of General Duties, a minimum of 3 x CBD are required.
+</blockquote>
+
+<!-- 	    The following modules do not have a requirement for a certain number of WBAs being performed.  Completion can be signed off by an education supervisor at their discretion if evidence of core clinical learning outcomes have been demonstrated.
+	    <ul class="double">
+			
+			
+	    	
+	    			
+	    </ul> -->
+
+	<!-- 	<strong>WBA Format</strong><blockquote>Only via ePortfolio. Paper format WBAs are not acceptable.<font color="#ff0000"> Agree? Does this make it difficult for ICM or WBAs by senior trainees?</font></blockquote> -->
+		<!-- <strong>Sessional requirement</strong>
+		<blockquote>
+		The following modules require a minimum of twenty sessions to be undertaken prior to the Unit of Training being signed off:
+		<ul class="double">
+			<li>Anaesthesia for neurosurgery, neuroradiology and neurocritical care</li>
+			<li>Cardiothoracic anaesthesia and cardiothoracic critical care</li>
+			<li>Obstetrics</li>
+			<li>Paediatric</li>
+	    	<li>Pain medicine</li>
+	    	<li><font color="#ff0000">ICM here?</font></li>
+		</ul>
+		</blockquote>
+		<strong>Sessional List Format</strong><blockquote>
+			Word document or Excel spreadsheet with a list of dates on which the sessions were undertaken.
+		</blockquote>
+		<strong>Sessional List Title</strong><blockquote>Named with the level of training and module title in the format: 
+		<br><code>Sessions - Intermediate - Obstetrics</code></blockquote><br><br>	 -->
+		</div>
+		<div class="ST5 ST6 ST7">
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code><!-- <img src="SpR.gif"> --><br><br>
+		<strong>Items</strong><blockquote>One electronic Unit of Training (UoT) Sign-Off for each
+	    module undertaken in period since last ARCP. Over the course of higher training (ST5 to ST7), mandatory UoT sign-offs are required for:
+	    <ul class="double">
+	    <li>Airway Management (part of <em>General duties</em>)</li>
+	    <li>Anaesthesia for neurosurgery, neuroradiology and neurocritical care</li>
+	    <li>Cardiothoracic anaesthesia and cardiothoracic critical care</li>
+	    <li>Intensive care medicine</li>
+	    <li>Management of respiratory and cardiac arrest (part of <em>General duties</em>)</li>
+	    <li>Paediatric</li>
+		</ul>
+In addition, then a minimum of six of the following <em>General duties</em> modules must be completed:
+<ul class="double">
+	    <li>Day surgery</li>
+	    <li>General, urological and gynaecological surgery</li>
+	    <li>Head, neck, maxillo-facial and dental surgery</li>
+	    <li>Non-theatre</li>
+	    <li>Obstetrics</li>
+	    <li>Orthopaedic surgery</li>
+	    <li>Sedation</li>
+	    <li>Transfer medicine</li>
+	    <li>Trauma and stabilisation</li>
+	    <li>Vascular surgery</li>
+	    <li>Regional</li>
+</ul>
+	    </blockquote>
+	    <strong>UoT Sign-off Format</strong><blockquote>Only via ePortfolio</blockquote>
+	<strong>WBA Guidance</strong><br>
+<blockquote>	    <a href="http://www.rcoa.ac.uk/system/files/TRG-CCT-AnnexD_1.pdf"><i class="icon-share-alt"></i></a><em> CCT in Anaesthesia: Annex D, page D-62</em>
+	    details the WBA requirements for each of these modules:
+	    <table class="table table-condensed table-bordered table-striped">
+	    	<thead><th width="40%">Module</th><th>WBAs</th></thead>
+	    	<tbody>
+	    <tr><td>Airway Management <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x DOPS and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+<tr>	    <td>Anaesthesia for neurosurgery, neuroradiology and neurocritical care</td
+	    >
+	    <td>1 x A-CEX and 1 x CBD</td></tr>
+<tr>	    <td>Cardiothoracic anaesthesia and cardiothoracic critical care</td>
+	    <td>1 x A-CEX, 1 x CBD and 1 x DOPS</td></tr>
+	    <tr><td>Day surgery <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>General, urological and gynaecological surgery <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Head, neck, maxillo-facial and dental surgery <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Intensive care medicine</td>
+	    	    <td>As determined by your module supervisor. See below.</td></tr>
+	    <tr><td>Management of respiratory and cardiac arrest <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x A-CEX and 1 x CBD</td></tr>
+	    <tr><td>Non-theatre <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x A-CEX and 1 x CBD</td></tr>
+	    <tr><td>Obstetrics <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Orthopaedic surgery</td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Paediatric</td>
+	    	    <td>1 x A-CEX, 1 x CBD and 1 x DOPS</td></tr>
+	    <tr><td>Regional <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD, 1 x DOPS and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Sedation <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Transfer medicine <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Trauma and stabilisation <i class="icon-exclamation-sign"></i></td>
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    <tr><td>Vascular surgery <i class="icon-exclamation-sign"></i></td>	
+	    	    <td>1 x CBD and [<strong>either</strong> 1 x A-CEX <strong>or</strong> 1 x ALMAT]</td></tr>
+	    	</tbody>
+	    </table>
+	    <i class="icon-exclamation-sign"></i> These modules form <em>General Duties</em>. For the whole of General Duties, a minimum of 3 x CBD are required.
+	    </blockquote>	
+	    <div class="CT1 CT2 CT2plus ST3 ST4 ST5 ST6 ST7">
+	        <strong>Intensive care medicine</strong>
+	        <blockquote>	    	
+	        <a href="http://www.rcoa.ac.uk/system/files/TRG-CCT-AnnexF_1.pdf"><i class="icon-share-alt"></i></a><em> CCT in Anaesthetics - Annex F</em> states that for ARCP, trainees should submit:
+	        <ul class="double">
+	        	<li>WBAs</li>
+	    		<li>Evidence of number of procedures performed</li>
+	    		<li>Evidence to demonstrate that the unit can provide and trainee has been exposed to a suitable variety of experience, including details of patients trainee has played a significant part in managing (similar to anaesthetic logbook data)</li>
+	    		<li>Information from unit data collection (eg ICNARC)</li>
+	    		<li>Evidence of attendance at at least 1 Morbidity and Mortality meeting and 1 journal club.</li>
+	    		<li>A satisfactory educational supervisor/faculty tutors report</li>
+	    	</ul>
+	    </blockquote>
+	    </div>
+		</div>		
+	</div>
+	<h3><a href="#">Attitudes & Behaviour</a></h3>
+	<div><p>
+	<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><!-- <img src="SpR.gif">	 -->	
+		<br><br>
+		<strong>Item</strong><blockquote>New Attitudes and Behaviour form: &nbsp; <i class="icon-download-alt"></i>&nbsp;<a href="Attitudes%20and%20Behaviour.pdf" class="btn btn-mini">.pdf</a>&nbsp;<a href="Attitudes%20and%20Behaviour.doc" class="btn btn-mini">.doc</a>
+
+
+	</blockquote>
+		<strong>Format</strong><blockquote>Scanned document or edited pdf, uploaded as evidence to ePortfolio.</blockquote>
+		<strong>Title</strong><blockquote>Named in the format: <code>Evidence - A and B - 2014 August Bolton</code></blockquote>
+		<strong>Frequency</strong><blockquote>One per hospital placement (minimum of one per year).
+	</blockquote>
+		<!-- <strong>Training Video</strong>
+		<blockquote>Available here soon...</blockquote>	 -->	
+		</p>		
+	</div>
+	<h3><a href="#">Educational Supervisor's Structured Report</a></h3>
+	<div>
+		<p>
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+		<code class="year">ST3</code>
+		<code class="year">ST4</code>
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code>	
+		<br><br>
+		<strong>Item</strong><blockquote>Educational Supervisor's Structured Report (ESSR) document
+		via the ePortfolio system</a></blockquote>
+		<strong>Format</strong><blockquote>Only via ePortfolio<!--  - training video [here] soon! --></blockquote>
+		<strong>Frequency</strong><blockquote>One per hospital placement, minimum of one per year.</blockquote>
+		<br><i class="icon-exclamation-sign"></i>&nbsp;NB. This <strong>replaces</strong> the previous requirement for a Form 4.<br>
+		<br><br>
+		<div class="well">
+			<strong>
+				Important note for College Tutors and Educational Supervisors
+			</strong>
+			<br><br>
+				ARCP panels will be involved in making recommendations for revalidation.
+ 			<br><br>
+ 				In order to make these annual recommendations, the ARCP panel will be specifically reviewing the ESSR and Enhanced Form R along with reports from the Lead Employing Organisation and Trust HR departments.
+ 			<br><br>
+				It is therefore important that Educational Supervisors are recording the following in the <em>Other Outcomes</em> section of the ESSR:
+ 			<ul>
+				<li>Any conduct or capability issues</li>
+				<li>Whether the trainee has been involved in any Serious Untoward Incidents or Significant Event Investigations</li>
+				<li>If the trainee has been named in any complaint.</li>
+			</ul>
+				If any of these are applicable, additional comments should state:
+				<ul>
+				<li>Whether they have been resolved satisfactorily</li>
+				<li>If any unresolved concerns about a trainee's conduct or fitness to practice persist</li>
+				</ul>
+		</div>
+		</p>			
+	</div>
+		<h3><a href="#">Audit/Clinical Governance Summary</a></h3>
+	<div>
+		<p>
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+		<code class="year">ST3</code>
+		<code class="year">ST4</code>
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code><br><br>	
+			<strong>Items</strong>
+			<blockquote>
+			There must be evidence in your ePortfolio that you have actively participated and contributed to <strong>one</strong> of the following per year:
+			<ul class="double">
+				<li>Audit with recognisable standards (eg. audit recipe book)</li>
+				<li>Re-audit to close the audit loop</li>
+				<li>Major contribution to development of new clinical guidelines</li>
+				<li>Major contribution to quality assurance/improvement programs</li>
+				<li>Major reviews of clinical effectiveness/outcomes in a local Trust</li>
+			</ul>
+		</blockquote>
+		<strong>Frequency</strong>
+		<blockquote>
+			One summary per year.
+		</blockquote>
+		<strong>Format</strong>
+		<blockquote>
+			Summary of Audit and Clinical Governance activity as a Word or PDF document uploaded to ePortfolio.
+		</blockquote>
+		<strong>Template</strong>
+		<blockquote>
+		Audit and Clinical Governance: &nbsp; <i class="icon-download-alt"></i> <a href="ICM%20Audit%20and%20Clinical%20Governance.doc" class="btn btn-mini">.doc</a>&nbsp;<a href="ICM%20Audit%20and%20Clinical%20Governance.pdf" class="btn btn-mini">.pdf</a>
+		</blockquote>
+		<strong>Title</strong>
+			<blockquote>Document should be named with the month and year of the ARCP in the format:<br>
+			<code>Evidence - Audit and Governance - July 2014</code>
+			</blockquote>
+			<strong>Notes</strong>
+			<blockquote>It is recommended that you upload the individual projects (or summaries) to the ePortfolio as evidence. For example, audit presentations or guidelines you contribute to developing.  The ARCP panel may ask to see projects referenced in your Summary document.</blockquote>
+		</p>
+	</div>
+	<h3><a href="#">GMC Survey</a></h3>
+	<div><p>
+	<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><br><br>		
+		<br>
+		<strong>Item</strong><blockquote>Annual GMC Survey certificate of completion - can be re-issued and downloaded from your GMC account. Copy of email confirming participation also acceptable.</blockquote>
+		<strong>Format</strong><blockquote>PDF or Word document uploaded to ePortfolio</blockquote>
+		<strong>Title</strong><blockquote>Named in the format:<br><code>Evidence - GMC Survey - 2014</code></blockquote>
+		<strong>Frequency</strong><blockquote>One per year.
+		</p>		
+	</div>
+
+			<h3><a href="#">CV</a></h3>
+	<div><p>
+	<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><br><br>			
+		<strong>Item</strong><blockquote>Your up-to-date CV</blockquote>
+		<strong>Format</strong><blockquote>PDF or Word document uploaded <strong>as evidence</strong> to the ePortfolio.
+		<br><br>
+		<i class="icon-warning-sign"></i>
+		Please note that a CV uploaded using the 'My Details' tab will not be visible to the ARCP panel, and needs to be added as evidence seperately.
+		<div class="ST7"><br>For your final ARCP, it is strongly advised that you bring a paper copy of your CV in order to fill in the Completion of Training form.</div>
+	</blockquote>
+		<strong>Title</strong><blockquote>Named with the year of update in the format: <code>Evidence - CV - 2014</code></blockquote>
+		<strong>Frequency</strong><blockquote>Once per year.
+		</p>		
+	</div>
+		<h3><a href="#">Logbook Summary *** NEEDS LOOKING AT ***</a></h3>
+	<div>
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+		<code class="year">ST3</code>
+		<code class="year">ST4</code>
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code><br><br>
+		<strong>Item</strong><blockquote>1. Summary from your logbook for the year - both ICM and Anaesthesia
+		2. Total summary from your entire ICM and anaesthesia logbooks</blockquote>
+		<strong>Format</strong><blockquote>PDF or Word document</blockquote>
+		<strong>Title</strong><blockquote>Named with the year & month of your ARCP in the format: 
+		<br><code>Evidence - Logbook - 2014 August</code></blockquote>
+		<strong>Frequency</strong><blockquote>One summary per ARCP period.</blockquote>
+		<strong>Note</strong><blockquote>The summary needs to cover the whole year, not the individual modules.<br><i class="icon icon-warning-sign"></i> Remember to backup your logbook regularly!</blockquote>	
+
+	</div>
+			<h3><a href="#">CME Points</a></h3>
+	<div>
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+		<code class="year">ST3</code>
+		<code class="year">ST4</code>
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code><br><br>
+		<strong>Items</strong>
+		<blockquote>
+			<ol>
+				<li>Summary document totalling internal and external points: &nbsp; <i class="icon-download-alt"></i> <a href="CME%20summary.doc" class="btn btn-mini">.doc</a>&nbsp;<a href="CME%20summary.pdf" class="btn btn-mini">.pdf</a><!-- &nbsp;<a href="CME summary.xls"><button class="btn btn-mini">.xls</button></a> --></li>
+				<li>CME/CPD certificates, certificates and records of attendence.</li>
+			</ol>
+		</blockquote>
+		<strong>Format</strong>
+		<blockquote>PDFs, Word documents or Spreadsheet</blockquote>
+		<strong>Titles</strong>
+		<blockquote>
+			<ol>
+				<li><em>Summary:</em> Named with the year & month of your ARCP in the format:<br><code>Evidence - CME Summary - 2014 August</code></li>
+				<li><em>Individual documents:</em> Named with year & month activity undertaken in the format:<br><code>Evidence - Certificate - 2014 June - Title of Course</code></li>
+		</ol>
+			</blockquote>
+		<strong>Frequency</strong><blockquote>One summary per ARCP period.</blockquote>
+		<strong>CPD Point Requirement</strong>
+		<blockquote>
+			25 internal and 25 external CPD/CME points per year. 
+		</blockquote>
+		<strong>Guidance</strong>
+			<blockquote>
+				Internal CME is anything undertaken within your base hospital: eg. attending teaching & audit meetings, <strong>formal</strong> teaching sessions of junior trainees/medical students (note this does not include informal theatre or ward-based teaching).  It also includes any online learning
+				activity with accredited CME/CPD points.<br><br>
+				External CME is any regional or national teaching or course undertaken away from your base hospital.
+				<br><br>
+				Points are awarded as follows:
+				<ul><li>1 point per hour of activity</li>
+					<li>Maximum of 5 points per whole day</li>
+					<li>Maximum of 3 points per half day</li>
+				</ul>
+				For consultants, there are limits on the number of points that can be claimed for attending or teaching courses.  However, it has been decided not to apply these limits to North West trainees.  You can, therefore, list external points for ALS, APLS and ATLS in the same year as a trainee in the North West, something that would not be permitted as a consultant.
+			</blockquote>		
+	</div>
+	<h3><a href="#">Stage Completion *** TITLE NEEDS THINKING ABOUT ***</a></h3>	
+	<div>	
+		<div class="ST3 ST4">
+			<code class="year">ST3</code> <code class="year">ST4</code> <strong>Completion of Stage 1 Training</strong>
+			<br><br>
+			If you have completed Stage 1 Training, the following documentation will be reviewed at your ARCP relating to your specialty placements.
+			<h3>ICM</h3>
+			<strong>Item</strong><blockquote>4 marked Expanded Case Summaries. A template marksheet is available from the Faculty website. &nbsp; <a href="http://www.ficm.ac.uk/sites/default/files/FICM%20ECS%20Marking%20Sheet%202013.doc" class="btn btn-mini"><i class="icon-download-alt"></i> FICM</a></blockquote>
+			<strong>Format</strong><blockquote>Marksheet uploaded to ePortfolio system.</blockquote>
+			<strong>Title</strong><blockquote>Named and numbered in the format: <code>Case Report - 1 - Sepsis</code></blockquote><br><br>
+			<h3>Anaesthesia</h3>
+			<strong>Item</strong><blockquote>Initial Assessment of Competence. Form available from the RCOA website &nbsp; <a href="http://www.rcoa.ac.uk/system/files/TRG-CU-IAC.doc" class="btn btn-mini"><i class="icon-download-alt"></i> RCOA</a></blockquote>
+					<strong>Format</strong><blockquote>Scanned and uploaded to ePortfolio</blockquote>
+					<strong>Title</strong><blockquote>Named as: <code>Anaesthetics - IAC</code></blockquote>
+					<br><br>
+			<h3>Medicine</h3>
+			<strong>This needs discussion!</strong><br><br>
+		<br><br>
+		</div>
+		<div class="ST5 ST6">
+			<code class="year">ST5</code>
+			<code class="year">ST6</code>
+			<strong>Completion of Stage 2 Training</strong>
+						<br><br>
+						If you have completed Stage 2 Training, the following documentation will be reviewed at your ARCP relating to your specialty placements.
+			<br><br>
+			<h3>ICM</h3>
+			<strong>Item</strong><blockquote>4 marked Expanded Case Summaries. A template marksheet is available from the Faculty website. &nbsp; <a href="http://www.ficm.ac.uk/sites/default/files/FICM%20ECS%20Marking%20Sheet%202013.doc" class="btn btn-mini"><i class="icon-download-alt"></i> FICM</a></blockquote>
+			<strong>Format</strong><blockquote>Marksheet uploaded to ePortfolio system.</blockquote>
+			<strong>Title</strong><blockquote>Named and numbered in the format: <code>Case Report - 5 - Weaning</code></blockquote><br><br>
+			<h3>Anaesthesia</h3>
+					<strong>Items</strong><blockquote>One RCOA ePortfolio electronic Unit of Training (UoT) Sign-Off for each
+				    module undertaken during your year in anaesthesia. Over the course of this year, mandatory UoT sign-offs are required for:
+				    <ul class="double">
+				    <li>Airway Management (part of <em>General duties</em>)</li>
+				    <li>Management of respiratory and cardiac arrest (part of <em>General duties</em>)</li>
+					</ul>
+			In addition, a minimum of six of the following <em>General duties</em> modules must be completed:
+			<ul class="double">
+				    <li>Day surgery</li>
+				    <li>General, urological and gynaecological surgery</li>
+				    <li>Head, neck, maxillo-facial and dental surgery</li>
+				    <li>Non-theatre</li>
+				    <li>Obstetrics</li>
+				    <li>Orthopaedic surgery</li>
+				    <li>Sedation</li>
+				    <li>Transfer medicine</li>
+				    <li>Trauma and stabilisation</li>
+				    <li>Vascular surgery</li>
+				    <li>Regional</li>
+			</ul>
+				    </blockquote>
+				    <strong>Format</strong><blockquote>Only via RCOA ePortfolio</blockquote>
+					<br><br>
+			<h3>Medicine</h3>
+			<strong>This needs clarifying from medics</strong><br><br>
+		</div>
+		<div class="ST7">
+			<code class="year">ST7</code><br><br>
+			<!-- <strong>Item</strong><blockquote>Higher Training Certificate</blockquote>
+			<strong>Format</strong><blockquote>Downloaded from college website</blockquote> -->
+			<strong>Completion of Stage 3 Training</strong>
+			<br><br>
+			<strong>Item</strong><blockquote>2 marked Expanded Case Summaries. A template marksheet is available from the Faculty website. &nbsp; <a href="http://www.ficm.ac.uk/sites/default/files/FICM%20ECS%20Marking%20Sheet%202013.doc" class="btn btn-mini"><i class="icon-download-alt"></i> FICM</a></blockquote>
+			<strong>Format</strong><blockquote>Marksheet uploaded to ePortfolio system.</blockquote>
+			<strong>Title</strong><blockquote>Named and numbered in the format: <code>Case Report - 9 - Brain stem testing</code></blockquote><br><br>
+			<strong>*** Will need something about Completion of Training Certificate here - when one is available! ***</strong>
+		</div>
+	</div>
+	<h3><a href="#">Research</a></h3>
+	<div>
+		<code class="year">ST6</code>
+		<br><br>	
+			<strong>This section is only applicable if you are undertaking research as part of your ST6 year</strong>
+			<br><br>
+			<strong>Item</strong>
+			<blockquote>Research summary, containing:
+					<ul>
+						<li>List of projects and their current status</li>
+						<li>Narrative summary of research activity since the last ARCP.</li>
+					</ul>
+			</blockquote>
+			<strong>Format</strong>
+			<blockquote>Uploaded to ePortfolio. Template document: <a href="ICM%20Research%20Summary.doc" class="btn btn-mini">.doc</a>&nbsp;<a href="ICM%20Research%20Summary.pdf" class="btn btn-mini">.pdf</a></blockquote>
+			<strong>Title</strong>
+			<blockquote>Named with the month and year of your ARCP in the format:<br><code>
+			Evidence - Research Summary - July 2014</code></blockquote>
+	</div>
+	<h3><a href="#">Overseas Out-of-programme Experience/Training</a></h3>
+	<div>
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+		<code class="year">ST3</code>
+		<code class="year">ST4</code>
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code><br><br>		
+			<strong>This section is only applicable if you are being given time out of programme</strong>
+			<br><br>
+			<strong>Item</strong>
+			<blockquote>Out-of-programme (OOP) summary, containing a brief description of work undertaken. This should include level of supervision, number of patients and case mix.
+				<br>
+				<br>
+				<i class="icon icon-check"></i>&nbsp;NB. If your OOP time has been approved for training by the FICM/RCOA, it is acceptable to upload a copy of the report sent to the faculty/college as evidence.
+			</blockquote>
+			<strong>Frequency</strong>
+			<blockquote>One summary per period out of programme.</blockquote>
+			<strong>Format</strong>
+			<blockquote>Word or PDF Document uploaded to ePortfolio.</blockquote>
+			<strong>Title</strong>
+			<blockquote>Named with the year of your OOPE activity in the format:<br><code>
+			Evidence - OOPE - 2014</code></blockquote>
+		
+	</div>
+	<h3><a href="#">Reflective Practice</a></h3>
+	<div>
+		<code class="year">CT1</code>
+		<code class="year">CT2</code>
+		<code class="year">CT2+</code>
+		<code class="year">ST3</code>
+		<code class="year">ST4</code>
+		<code class="year">ST5</code>
+		<code class="year">ST6</code>
+		<code class="year">ST7</code><br><br>
+		
+	<!-- 		<strong>Items</strong>
+			<blockquote>Reflective practice</blockquote> -->
+			<strong>Frequency</strong><blockquote>Minimum of 6 reflections per 12 months.</blockquote>
+			<strong>Format</strong>
+			<blockquote>Via ePortfolio only. (Activity -> Add Activity.<!--  Training video available [link] soon -->)</blockquote>
+			<strong>Titles</strong>
+			<blockquote>Prefixed with 'Reflection' and the year undertaken in the format:<br><code>
+			Reflection - 2014 - A difficult moment</code></blockquote>
+			<strong>Note</strong>
+			<blockquote>It is recommended that you follow a recognised framework for reflection in entering your items.  eg:
+				<ul class="double">
+					<li><strong>S</strong>ituation</li>
+					<li><strong>T</strong>ask</li>
+					<li><strong>A</strong>ction</li>
+					<li><strong>R</strong>esults</li>
+				</ul>
+		
+	</div>
+	<h3><a href="#">Multi-source Feedback</a></h3>
+	<div>
+		<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><br><br>
+<!-- 		<strong>Item</strong>
+			<blockquote>Multi-source feedback: appraisal from multidisciplinary professionals.</blockquote> -->
+			<strong>Frequency</strong>
+			<blockquote>One per hospital placement since your last ARCP</blockquote>
+			<strong>Format</strong>
+			<blockquote>Via ePortfolio
+			</blockquote>
+			<strong>Number of responders</strong>
+			<blockquote>Please send requests from the ePortfolio system to <strong>15</strong> people. A minimum number of <strong>10</strong> replies are required.  It is advised that an MSF is undertaken early to ensure it is completed in time for your ARCP.</blockquote>
+	</div>
+	<h3><a href="#">Probity & Health</a></h3>
+	<div>
+		<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><br><br>
+		<strong>Item</strong>
+		<blockquote>Probity and health declarations</blockquote>
+		<strong>Frequency</strong>
+		<blockquote>One of each per year</blockquote>
+		<strong>Format</strong>
+		<blockquote>Via ePortfolio <!-- (training video [here] soon). --></blockquote>
+	</div>
+<h3><a href="#">Revalidation</a></h3>
+	<div>
+		<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><br><br>
+		<p>From 1st April 2013, all trainees attending an ARCP will need to complete an <em>Enhanced Form R for Doctors In Training (Self-Declaration)</em> form as part of the revalidation process.  <!-- An example completed form is available here. &nbsp;<a href="ENHANCED%20FORM%20R%20-%202013%20example.pdf"><i class="icon-arrow-right"></i><em>Example form (.pdf)</em></a></p><p> --> This is now available as an online form at the Deanery website.</p><p> 
+		<strong>Item</strong>
+		<!-- <blockquote>Enhanced Form R for ARCP Trainees <a href="ENHANCED%20FORM%20R%20-%202013.doc" class="btn btn-mini">.doc</a>&nbsp;<a href="ENHANCED%20FORM%20R%20-%202013.pdf" class="btn btn-mini">.pdf</a></blockquote> -->
+		<blockquote><a href="https://www.nwpgmd.nhs.uk/form-r-part-a" class="btn btn-mini"><i class="icon-arrow-right"></i> Part A</a> and <a href="https://www.nwpgmd.nhs.uk/form-r-part-b" class="btn btn-mini"><i class="icon-arrow-right"></i> Part B</a> at the Deanery website.</blockquote>
+		<strong>Frequency</strong>
+		<blockquote>One per ARCP</blockquote>
+		<!-- <strong>Format</strong>
+		<blockquote>Uploaded to ePortfolio in .docx or .pdf format for review by ARCP panel.  Adding a passport photo to the electronic form is not required.</li>
+			</blockquote>
+		<strong>Title</strong>
+		<blockquote>Named with the year of your ARCP in the format:<br><code>
+		Revalidation - 2013 - Form R</code></blockquote> -->
+		<strong>Notes for Completion</strong>
+		<blockquote>The Form R must cover your most recent placement and have been completed <strong>no earlier than one month prior to your ARCP</strong>.</blockquote>
+		<!-- <br>
+		<i>NB. There is longer a requirement to bring a paper copy of this form to your ARCP.</i> -->
+	</p>
+	</div>	
+
+
+<h3><a href="#">Feedback</a></h3>
+	<div>
+		<code class="year">CT1</code>
+	<code class="year">CT2</code>
+	<code class="year">CT2+</code>
+	<code class="year">ST3</code>
+	<code class="year">ST4</code>
+	<code class="year">ST5</code>
+	<code class="year">ST6</code>
+	<code class="year">ST7</code><br><br>
+<!-- 		<p> -->
+		<strong>Item  *** THIS FORM NEEDS UPDATING BY STC ***</strong>
+		<blockquote>Placement Feedback <a href="Trainee%20Placement%20Feedback%202013.doc" class="btn btn-mini">.doc</a>&nbsp;<a href="Trainee%20Placement%20Feedback%202013.pdf" class="btn btn-mini">.pdf</a></blockquote>
+		<strong>Frequency</strong>
+		<blockquote>One per hospital placement since your last ARCP.</blockquote>
+		<strong>Format</strong>
+		<blockquote>Paper copy
+			</blockquote>
+		<strong>Note</strong>
+		<blockquote>Hard copies will be collected by the Training Programme Director on the day of your ARCP and data will be collated by your trainee representatives. All placement feedback is completely anonymous.</blockquote>
+<!-- 	</p> -->
+	</div>	
+
+</div>
+
+</div>
+<div class="modal hide" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="myModalLabel">Document updates</h3>
+  </div>
+  <div class="modal-body">
+    <dl>
+    	<dt>9 March 2014</dt>
+    	<dd>Work in progress. AE/JPL</dd>
+    	<p>&nbsp;</p>
+    </dl>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" data-dismiss="modal">Close</button>
+  </div>
+</div>
+<br><br>
+<div class="navbar navbar-static-bottom">
+	<div class="navbar-inner">
+		<ul class="nav pull-left">
+<li><a>A Eusuf</a></li>
+<li><a>JP Lomas</a></li>
+<li><a>and the North West School of Intensive Care Medicine STC</a></li>
+<!-- <li><a><em>December 2012</em></a></li> -->
+</ul>
+</div>
+</div>
+<!-- Piwik --> 
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://crumble.org/~john/piwik/" : "http://crumble.org/~john/piwik/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://crumble.org/~john/piwik/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+</body>
+</html>
+<!-- Amy Stocks bug-fixed version!! -->
