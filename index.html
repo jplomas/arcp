@@ -171,8 +171,21 @@
 
 	}
 	function arrgh() {
+		$( "#accordion" ).on( "click", function( event, ui ) {
+			//alert('accord clicked');
+			ltftClick();
+		} );
 		$("#NW").hide("fast");		
 	}
+
+	function ltftClick() {
+		if ($('#ltftBox').prop('checked')) {
+			$('.LTFT').show('fast');
+		} else {
+			$('.LTFT').hide('fast');
+		}
+	}
+
 	</script>
 	<style>
 	@media (max-width: 767px) { 
@@ -248,6 +261,20 @@
 	<br><br>
 	It may well be that in the future the ePortfolio is closed to changes by trainees in the days immediately prior to their ARCP date to allow the panel members to review their evidence before meeting.  It is strongly recommended that trainees keep their ePortfolio up-to-date and stay on top of these requirements.
 	<br><br>
+	<div class="alert alert-success">
+		<strong>LTFT</strong><br>
+		Specific guidance for those training less than full time is available.
+		<form class="form">
+		  <div class="control-group">
+		    <div class="controls">
+		      <label class="checkbox">
+		        <input type="checkbox" onClick="ltftClick()" id="ltftBox"> Show LTFT Guidance
+		      </label>
+		    </div>
+		  </div>
+		</form>
+		<div class="LTFT" style="display:none">Guidance will be shown in green boxes in the sections below.</div>
+	</div>
 <!-- Re-enable when videos are available...
 	<i class="icon-file"></i><i class="icon-upload"></i>&nbsp;
 	Some evidence requires uploading to the ePortfolio as PDF/Word documents. Help to do this is available [here - soon]
@@ -313,6 +340,12 @@ Choose your year of training.<br><br><br><br><br><br>
 	</div> -->
  	<h3><a href="#">Unit of Training Sign-off & WBAs</a></h3>
 	<div>
+		<div class="LTFT" style="display:none">
+		<div class="alert alert-success">
+		<strong>LTFT</strong><br>
+			The number accrued should show adequate progression reflecting the proportion of the training year (not calendar year) which has been completed since the last ARCP.
+		</div>
+		</div>
 		<div class="CT1 CT2 CT2plus">
 			<strong>Unit of Training Sign-off Format</strong><blockquote>Only via ePortfolio</blockquote>
 		</div>
@@ -701,7 +734,14 @@ In addition, then a minimum of six of the following <em>General duties</em> modu
 		</div>		
 	</div>
 	<h3><a href="#">Attitudes & Behaviour</a></h3>
-	<div><p>
+	<div>
+	<div class="LTFT" style="display:none">
+	<div class="alert alert-success">
+	<strong>LTFT</strong><br>
+		xxx
+	</div>
+	</div>
+	<p>
 	<code class="year">CT1</code>
 	<code class="year">CT2</code>
 	<code class="year">CT2+</code>
@@ -725,6 +765,12 @@ In addition, then a minimum of six of the following <em>General duties</em> modu
 	</div>
 	<h3><a href="#">Educational Supervisor's Structured Report</a></h3>
 	<div>
+	<div class="LTFT" style="display:none">
+	<div class="alert alert-success">
+		<strong>LTFT</strong><br>
+		xxx
+	</div>
+	</div>
 		<p>
 		<code class="year">CT1</code>
 		<code class="year">CT2</code>
@@ -767,6 +813,12 @@ In addition, then a minimum of six of the following <em>General duties</em> modu
 	</div>
 		<h3><a href="#">Audit/Clinical Governance Summary</a></h3>
 	<div>
+	<div class="LTFT" style="display:none">
+	<div class="alert alert-success">
+		<strong>LTFT</strong><br>
+		xxx
+	</div>
+	</div>
 		<p>
 		<code class="year">CT1</code>
 		<code class="year">CT2</code>

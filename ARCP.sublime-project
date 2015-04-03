@@ -32,6 +32,10 @@
 		{
 			"follow_symlinks": true,
 			"path": "/Users/jp/Dropbox/Election"
+		},
+		{
+			"follow_symlinks": true,
+			"path": "/Users/jp/Dropbox/Return to work"
 		}
 	]
 }
