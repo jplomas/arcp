@@ -1,0 +1,62 @@
+    // .main.container {
+    //     padding-top: 7em;
+    // }
+    .ui.menu {
+        background-color: #09ACB2;
+        /*background-color: #B22883;*/
+    }
+    .ui.header {
+        color: #B22883;
+    }
+    .ui.menu .item  {
+        color: #FFF;
+    }
+    /* @googleFontRequest : 'Source+Sans+Pro:200,300,400,600,700,900|Source+Serif+Pro:400,600,700'; */
+    .sans.thin {
+        font-weight: 200;
+    }
+    .sans.light {
+        font-weight: 300;
+    }
+    .sans.normal {
+        font-weight: 400;
+    }
+    .sans.bold {
+        font-weight: 600;
+    }
+    .sans.extrabold {
+        font-weight: 700;
+    }
+    .sans.black {
+        font-weight: 900;
+    }
+
+    .serif.normal {
+        font-family: 'Source Serif Pro';
+        font-weight: 400;
+    }
+    .serif.bold {
+        font-family: 'Source Serif Pro';
+        font-weight: 600;
+    }
+    .serif.extrabold {
+        font-family: 'Source Serif Pro';
+        font-weight: 700;
+    }
+    .ui.cards>.card>.extra a:not(.ui):hover {
+        color: #09ACB2;
+    }
+    .ui.cards>.card>.content a:not(.ui):hover {
+        color: #09ACB2;
+    }
+    .jpPara {
+        line-height: 2.3em;
+    }
+    p > a {
+
+        color: rgba(0,0,0,0.4);
+    }
+    p > a:hover {
+
+        color: #09ACB2;
+    }
