@@ -101,7 +101,7 @@
             <li class="p-1">
               Core level:
               <a
-                href="/Panel%20A%20proforma%20CT%20training%20-%20June%2016.doc"
+                href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.doc"
                 class="btn btn-outline-secondary btn-sm"
               >
                 <font-awesome-icon icon="download" />
@@ -109,7 +109,7 @@
               </a>
               &nbsp;
               <a
-                href="/Panel%20A%20proforma%20CT%20training%20-%20June%2016.pdf"
+                href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.pdf"
                 class="btn btn-outline-secondary btn-sm"
               >
                 <font-awesome-icon icon="download" />
@@ -119,24 +119,24 @@
 
             <li class="p-1">
               Intermediate level:
-              <a href="/Panel%20A%20proforma.%20ST3-4%20Final.doc" class="btn btn-outline-secondary btn-sm">
+              <a href="Panel%20A%20proforma.%20ST3-4%20Final.doc" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a href="/Panel%20A%20proforma.%20ST3-4%20Final.pdf" class="btn btn-outline-secondary btn-sm">
+              <a href="Panel%20A%20proforma.%20ST3-4%20Final.pdf" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
             </li>
             <li class="p-1">
               Higher level:
-              <a href="/Panel%20A%20proforma.%20ST5-7%20Final.doc" class="btn btn-outline-secondary btn-sm">
+              <a href="Panel%20A%20proforma.%20ST5-7%20Final.doc" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a href="/Panel%20A%20proforma.%20ST5-7%20Final.pdf" class="btn btn-outline-secondary btn-sm">
+              <a href="Panel%20A%20proforma.%20ST5-7%20Final.pdf" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
@@ -146,36 +146,36 @@
           <ul v-if="name === 2021 && somethingChosen()">
             <li v-if="toShow('CT1 CT2 CT3')" class="p-1">
               Stage 1:
-              <a href="/Stage%201%20ARCP%20Proforma.doc" class="btn btn-outline-secondary btn-sm">
+              <a href="Stage%201%20ARCP%20Proforma.doc" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a href="/Stage%201%20ARCP%20Proforma.pdf" class="btn btn-outline-secondary btn-sm">
+              <a href="Stage%201%20ARCP%20Proforma.pdf" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
             </li>
             <li v-if="toShow('ST4 ST5')" class="p-1">
               Stage 2:
-              <a href="/Stage%202%20ARCP%20Proforma.doc" class="btn btn-outline-secondary btn-sm">
+              <a href="Stage%202%20ARCP%20Proforma.doc" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a href="/Stage%202%20ARCP%20Proforma.pdf" class="btn btn-outline-secondary btn-sm">
+              <a href="Stage%202%20ARCP%20Proforma.pdf" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
             </li>
             <li v-if="toShow('ST6 ST7')" class="p-1">
               Stage 3:
-              <a href="/Stage%203%20ARCP%20Proforma.doc" class="btn btn-outline-secondary btn-sm">
+              <a href="Stage%203%20ARCP%20Proforma.doc" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a href="/Stage%203%20ARCP%20Proforma.pdf" class="btn btn-outline-secondary btn-sm">
+              <a href="Stage%203%20ARCP%20Proforma.pdf" class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
