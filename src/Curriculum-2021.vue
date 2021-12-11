@@ -36,119 +36,121 @@
                 Evidence is required of HALO progress in each of the seven GPC and seven specialty-specific clinical
                 domains. The same evidence can be referenced to multiple domains. Examples of the possible types of
                 evidence are detailed below and additional information is available within the LLP.
-                <table class="table mt-3">
-                  <thead>
-                    <tr class="table-primary">
-                      <td>GPC Domains</td>
-                      <td>Evidence</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>1. Professional Behaviours & Communication</td>
-                      <td>
-                        <ul>
-                          <li>SLE</li>
-                          <li>Personal Activity</li>
-                          <li>Personal Reflection</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>2. Management/Professional/Regulatory Requirements</td>
-                      <td>
-                        <ul>
-                          <li>SLE</li>
-                          <li>Personal Activity</li>
-                          <li>Personal Reflection</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>3. Team Working</td>
-                      <td>
-                        <ul>
-                          <li>
-                            SLE [
-                            <strong>
-                              one ALMAT per year
-                              <span style="text-decoration: underline">MUST</span>
-                              be completed
-                            </strong>
-                            ]
-                          </li>
-                          <li>Personal Activity</li>
-                          <li>Personal Reflection</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>4. Safety & Quality Improvement</td>
-                      <td>See below</td>
-                    </tr>
-                    <tr>
-                      <td>5. Safeguarding</td>
-                      <td>
-                        <ul>
-                          <li>SLE</li>
-                          <li>Personal Activity</li>
-                          <li>Personal Reflection</li>
-                        </ul>
-                        Trust mandatory training is acceptable evidence for this domain and certificates of completion
-                        can be uploaded for:
-                        <ul>
-                          <li>Safeguarding adults</li>
-                          <li>Safeguarding children</li>
-                          <li>MCA</li>
-                        </ul>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>6. Education & Training</td>
-                      <td>
-                        <li>SLE</li>
-                        <li>Personal Activity</li>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>7. Research & Managing Data</td>
-                      <td>
-                        <ul>
-                          <li>SLE</li>
-                          <li>Personal Activity</li>
-                          <li>Personal Reflection</li>
-                        </ul>
-                      </td>
-                    </tr>
+                <div class="table-responsive">
+                  <table class="table mt-3">
                     <thead>
                       <tr class="table-primary">
-                        <td>Speciality-specific domains</td>
+                        <td>GPC Domains</td>
                         <td>Evidence</td>
                       </tr>
                     </thead>
-                    <tr>
-                      <td>
-                        <ul>
-                          <li>Perioperative Medicine and Health Promotion</li>
-                          <li>General Anaesthesia</li>
-                          <li>Regional Anaesthesia</li>
-                          <li>Resuscitation and Transfer</li>
-                          <li>Procedural Sedation</li>
-                          <li>Pain</li>
-                          <li>Intensive Care</li>
-                        </ul>
-                      </td>
-                      <td>
-                        For each Domain there should be evidence of:
-                        <ul>
+                    <tbody>
+                      <tr>
+                        <td>1. Professional Behaviours & Communication</td>
+                        <td>
+                          <ul>
+                            <li>SLE</li>
+                            <li>Personal Activity</li>
+                            <li>Personal Reflection</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>2. Management / Professional / Regulatory Requirements</td>
+                        <td>
+                          <ul>
+                            <li>SLE</li>
+                            <li>Personal Activity</li>
+                            <li>Personal Reflection</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>3. Team Working</td>
+                        <td>
+                          <ul>
+                            <li>
+                              SLE [
+                              <strong>
+                                one ALMAT per year
+                                <span style="text-decoration: underline">MUST</span>
+                                be completed
+                              </strong>
+                              ]
+                            </li>
+                            <li>Personal Activity</li>
+                            <li>Personal Reflection</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>4. Safety & Quality Improvement</td>
+                        <td>See below</td>
+                      </tr>
+                      <tr>
+                        <td>5. Safeguarding</td>
+                        <td>
+                          <ul>
+                            <li>SLE</li>
+                            <li>Personal Activity</li>
+                            <li>Personal Reflection</li>
+                          </ul>
+                          Trust mandatory training is acceptable evidence for this domain and certificates of completion
+                          can be uploaded for:
+                          <ul>
+                            <li>Safeguarding adults</li>
+                            <li>Safeguarding children</li>
+                            <li>MCA</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>6. Education & Training</td>
+                        <td>
                           <li>SLE</li>
-                          <li>Personal Reflection</li>
                           <li>Personal Activity</li>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>7. Research & Managing Data</td>
+                        <td>
+                          <ul>
+                            <li>SLE</li>
+                            <li>Personal Activity</li>
+                            <li>Personal Reflection</li>
+                          </ul>
+                        </td>
+                      </tr>
+                      <thead>
+                        <tr class="table-primary">
+                          <td>Speciality-specific domains</td>
+                          <td>Evidence</td>
+                        </tr>
+                      </thead>
+                      <tr>
+                        <td>
+                          <ul>
+                            <li>Perioperative Medicine and Health Promotion</li>
+                            <li>General Anaesthesia</li>
+                            <li>Regional Anaesthesia</li>
+                            <li>Resuscitation and Transfer</li>
+                            <li>Procedural Sedation</li>
+                            <li>Pain</li>
+                            <li>Intensive Care</li>
+                          </ul>
+                        </td>
+                        <td>
+                          For each Domain there should be evidence of:
+                          <ul>
+                            <li>SLE</li>
+                            <li>Personal Reflection</li>
+                            <li>Personal Activity</li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <strong>4. Safety &amp; Quality Improvement GPC</strong>
                 <br />
                 At a minimum, there must be evidence in your LLP that you have actively participated and significantly
