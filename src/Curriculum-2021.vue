@@ -194,7 +194,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <div class="bg-light p-3 mb-3 mt-3">
+                <div v-if="toShow('CT1 CT2 CT3')" class="bg-light p-3 mb-3 mt-3">
                   Based on shortlisting for national ST4 jobs, It is
                   <strong>strongly</strong>
                   recommended that
