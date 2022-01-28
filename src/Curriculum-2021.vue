@@ -275,6 +275,120 @@
         </div>
         <!-- /EPAs -->
 
+        <!-- ESSR -->
+        <div class="card">
+          <div id="headingThree" data-bs-toggle="collapse" data-bs-target="#collapseThree" class="card-header">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed p-0 text-left nti"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                <span class="when-opened">
+                  <font-awesome-icon icon="caret-down" />
+                </span>
+                <span class="when-closed">
+                  <font-awesome-icon icon="caret-right" />
+                </span>
+                Educational Supervisor's Structured Report
+              </button>
+            </h5>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="card-body">
+              <div>
+                <div v-if="ltft">
+                  <div class="alert alert-success">
+                    <strong>LTFT</strong>
+                    <br />
+                    One ESSR or interim training report per calendar year immediately prior to ARCP. College Tutors may
+                    elect to submit an interim progress report rather than an ESSR depending on the progress in training
+                    made by the trainee since the previous ARCP e.g. an interim training report may be more appropriate
+                    for trainees attending ARCP whilst on maternity/ sickness leave.
+                  </div>
+                </div>
+                <code v-if="toShow('CT1')" class="year">CT1</code>
+                <code v-if="toShow('CT2')" class="year">CT2</code>
+                <code v-if="toShow('CT3')" class="year">CT3</code>
+                <code v-if="toShow('ST3')" class="year">ST3</code>
+                <code v-if="toShow('ST4')" class="year">ST4</code>
+                <code v-if="toShow('ST5')" class="year">ST5</code>
+                <code v-if="toShow('ST6')" class="year">ST6</code>
+                <code v-if="toShow('ST7')" class="year">ST7</code>
+                <br />
+                <br />
+                <strong>Item</strong>
+                <blockquote>Educational Supervisor's Structured Report (ESSR) document via the LLP system</blockquote>
+                <strong>Format</strong>
+                <blockquote>
+                  Only via LLP
+                  <!--  - training video [here] soon! -->
+                </blockquote>
+                <strong>Title</strong>
+                <blockquote>
+                  The ESSR prior to your ARCP should be labelled with the dates covered and the year of training
+                  assessed:
+                  <br />
+                  <code>ESSR August 2018 - August 2019 ST5</code>
+                </blockquote>
+                <blockquote class="LTFT alert alert-success">
+                  For LTFT, please note this along with the WTE in the title (e.g. for 60% in ST4):
+                  <br />
+                  <code>ESSR August 2018 - August 2019 LTFT 0.6 ST4</code>
+                </blockquote>
+                <strong>Frequency</strong>
+                <blockquote>
+                  <em>Always</em>
+                  immediately prior to ARCP
+                  <br />
+                  <em>&nbsp; &nbsp; and</em>
+                  <br />
+                  <em>Always</em>
+                  immediately prior to leaving a Trust.
+                  <br />
+                  <em>&nbsp; &nbsp; and</em>
+                  <br />
+                  <em>Sometimes</em>
+                  on completion of a training module, depending on how training is set up in your hospital (check with
+                  College Tutor).
+                </blockquote>
+                <div class="bg-light p-3 mb-3">
+                  <strong>Important note for College Tutors and Educational Supervisors</strong>
+                  <br />
+                  <br />
+                  ARCP panels will be involved in making recommendations for revalidation.
+                  <br />
+                  <br />
+                  In order to make these annual recommendations, the ARCP panel will be specifically reviewing the ESSR
+                  and Enhanced Form R along with reports from the Lead Employing Organisation and Trust HR departments.
+                  <br />
+                  <br />
+                  It is therefore important that Educational Supervisors are recording the following in the
+                  <em>Other Outcomes</em>
+                  section of the ESSR:
+                  <ul>
+                    <li>Any conduct or capability issues</li>
+                    <li>
+                      Whether the trainee has been involved in any Serious Untoward Incidents or Significant Event
+                      Investigations
+                    </li>
+                    <li>If the trainee has been named in any complaint.</li>
+                  </ul>
+                  If any of these are applicable, additional comments should state:
+                  <ul>
+                    <li>Whether they have been resolved satisfactorily</li>
+                    <li>If any unresolved concerns about a trainee's conduct or fitness to practice persist</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /ESSR -->
+
         <!-- MTR -->
         <div class="card">
           <div id="headingOneBee" data-bs-toggle="collapse" data-bs-target="#collapseOneBee" class="card-header">

@@ -17,6 +17,8 @@
         </div>
         <div class="modal-body">
           <dl>
+            <dt>28th January 2022</dt>
+            <dd>ESSR requirement added to 2021 Curriculum section.</dd>
             <dt>3rd December 2021</dt>
             <dd>
               Complete rewrite of the undelying codebase (using Vue for those interested) following agreement of
