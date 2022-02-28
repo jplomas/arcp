@@ -264,7 +264,7 @@
                 <blockquote>
                   <ul>
                     <li v-if="toShow('CT1')">EPA 1 / EPA 2 (IAC) should be completed by the end of CT1</li>
-                    <li v-if="toShow('CT2 CT3')">EPA 3 / EPA 4 (IAOC) should be completed by the end of CT1</li>
+                    <li v-if="toShow('CT2 CT3')">EPA 3 / EPA 4 (IAOC) should be completed by the end of CT3</li>
                   </ul>
                 </blockquote>
                 <strong>Format</strong>

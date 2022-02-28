@@ -17,6 +17,8 @@
         </div>
         <div class="modal-body">
           <dl>
+            <dt>28th February 2022</dt>
+            <dd>Typo fixed on EPA3/4 completion (thanks to Dr Pratt for spotting!)</dd>
             <dt>28th January 2022</dt>
             <dd>ESSR requirement added to 2021 Curriculum section.</dd>
             <dt>3rd December 2021</dt>
