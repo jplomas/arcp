@@ -36,6 +36,29 @@
                 Evidence is required of HALO progress in each of the seven GPC and seven specialty-specific clinical
                 domains. The same evidence can be referenced to multiple domains. Examples of the possible types of
                 evidence are detailed below and additional information is available within the LLP.
+                <br />
+                <br />
+              </div>
+              <div v-if="toShow('CT3 ST5 ST7')" class="CT3 ST5 ST7">
+                <code v-if="toShow('CT3')" class="year">CT3</code>
+                <code v-if="toShow('ST5')" class="year">ST5</code>
+                <code v-if="toShow('ST7')" class="year">ST7</code>
+                <br />
+                <br />
+                <strong>Completed HALOs</strong>
+                <br />
+                <br />
+                14 HALO forms [7 x Clinical, 7 x GPC] are required to be completed on the LLP prior to the end of each
+                stage of training.
+                <div class="bg-light p-3 mb-3 mt-3">
+                  <strong>
+                    Stage of training sign off will be completed
+                    <em>at ARCP</em>
+                    and does not need to be undertaken beforehand
+                  </strong>
+                </div>
+              </div>
+              <div v-if="toShow('CT1 CT2 CT3 ST4 ST5 ST6 ST7')" class="CT1 CT2 CT3 ST4 ST5 ST6 ST7">
                 <div class="table-responsive">
                   <table class="table mt-3">
                     <thead>
@@ -165,12 +188,18 @@
                   <tbody>
                     <tr>
                       <td>1. Audit with recognisable standards (eg. audit recipe book)</td>
-                      <td>AQIPAT form</td>
+                      <td>
+                        A-QIPAT form
+                        <super>*</super>
+                      </td>
                     </tr>
 
                     <tr>
                       <td>2. Re-audit to close the audit loop</td>
-                      <td>AQIPAT form</td>
+                      <td>
+                        A-QIPAT form
+                        <super>*</super>
+                      </td>
                     </tr>
 
                     <tr>
@@ -180,7 +209,10 @@
 
                     <tr>
                       <td>4. Contribution to quality assurance/improvement programs</td>
-                      <td>AQIPAT form</td>
+                      <td>
+                        A-QIPAT form
+                        <super>*</super>
+                      </td>
                     </tr>
 
                     <tr>
@@ -199,31 +231,19 @@
                   <strong>strongly</strong>
                   recommended that
                   <strong>at least one audit or QI project</strong>
-                  (with associated AQIPAT form) is completed
+                  (with associated A-QIPAT form
+                  <super>*</super>
+                  ) is completed
                   <strong>per year</strong>
                   of training.
                 </div>
+                <super>*</super>
+                A-QIPAT forms can be found on the LLP as an SLE or the form can be
+                <a href="https://www.rcoa.ac.uk/sites/default/files/documents/2021-07/A-QIPAT%20v1.1.pdf">
+                  downloaded from the RCoA website
+                </a>
                 <br />
                 <br />
-              </div>
-              <div v-if="toShow('CT3 ST5 ST7')" class="CT3 ST5 ST7">
-                <code v-if="toShow('CT3')" class="year">CT3</code>
-                <code v-if="toShow('ST5')" class="year">ST5</code>
-                <code v-if="toShow('ST7')" class="year">ST7</code>
-                <br />
-                <br />
-                <strong>Completed HALOs</strong>
-                <br />
-                <br />
-                14 HALO forms [7 x Clinical, 7 x GPC] are required to be completed on the LLP prior to the end of each
-                stage of training.
-                <div class="bg-light p-3 mb-3 mt-3">
-                  <strong>
-                    Stage of training sign off will be completed
-                    <em>at ARCP</em>
-                    and does not need to be undertaken beforehand
-                  </strong>
-                </div>
               </div>
             </div>
           </div>
@@ -878,10 +898,10 @@
                   your Form R. Remember reflections could include 'positive' events: compliments, thank-you cards and
                   stand-out educational experiences. For more information, see the
                   <!-- eslint-disable -->
-          <a
-            href="http://www.aomrc.org.uk/wp-content/uploads/2018/09/the_reflective_practioner_guidance_single_page.pdf"
-          >
-          <!-- eslint-enable -->
+                  <a
+                    href="http://www.aomrc.org.uk/wp-content/uploads/2018/09/the_reflective_practioner_guidance_single_page.pdf"
+                  >
+                    <!-- eslint-enable -->
                     <i class="icon-arrow-right"></i>
                     AoMRC reflective toolkit
                   </a>

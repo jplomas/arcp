@@ -9,7 +9,7 @@
               <h5>Northwest School of Anaesthesia</h5>
               <p>&nbsp;</p>
               <h6>
-                Last update: 28th February 2022 &nbsp;
+                Last update: 30th June 2023 &nbsp;
                 <a
                   href="#detailsModal"
                   role="button"

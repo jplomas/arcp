@@ -17,8 +17,10 @@
         </div>
         <div class="modal-body">
           <dl>
+            <dt>30th June 2023</dt>
+            <dd>HALO detail in CT3/ST5/ST7 and A-QIPAT signposting (thanks to Dr J Hirst for the suggestions!)</dd>
             <dt>28th February 2022</dt>
-            <dd>Typo fixed on EPA3/4 completion (thanks to Dr Pratt for spotting!)</dd>
+            <dd>Typo fixed on EPA3/4 completion (thanks to Dr O Pratt for spotting!)</dd>
             <dt>28th January 2022</dt>
             <dd>ESSR requirement added to 2021 Curriculum section.</dd>
             <dt>3rd December 2021</dt>
