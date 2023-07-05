@@ -17,6 +17,8 @@
         </div>
         <div class="modal-body">
           <dl>
+            <dt>5th July 2023</dt>
+            <dd>LTFT info for 2021 curriculum added.</dd>
             <dt>30th June 2023</dt>
             <dd>HALO detail in CT3/ST5/ST7 and A-QIPAT signposting (thanks to Dr J Hirst for the suggestions!)</dd>
             <dt>28th February 2022</dt>

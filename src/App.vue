@@ -29,7 +29,7 @@
         <div v-if="name === 2010" class="container mt-4">
           <ChooseYearOld />
         </div>
-        <div v-if="name === 2010" class="alert alert-success mt-3 mb-5">
+        <div class="alert alert-success mt-3 mb-5">
           <strong>LTFT</strong>
           <br />
           Specific guidance for those training less than full time is available.
@@ -202,7 +202,7 @@
       </div>
 
       <div v-if="name === 2021 && somethingChosen()">
-        <Curr2021 :ltft="false" />
+        <Curr2021 :ltft="ltft" />
       </div>
     </main>
     <FooterInfo />
