@@ -9,12 +9,8 @@
             <strong>{{ name }}</strong>
           </div>
           <div class="btn-group dropend">
-            <button
-              type="button"
-              class="btn btn-secondary dropdown-toggle"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
               Choose Curriculum
             </button>
             <ul class="dropdown-menu">
@@ -23,13 +19,29 @@
             </ul>
           </div>
         </div>
-        <div v-if="name === 2021" class="container mt-4">
+        <div class="alert alert-danger mt-3 mb-5">
+          <strong>ACCS</strong>
+          <br />
+          For the first two years doing EM, AM, ICM and anaesthesia, before starting anaesthesia proper in ACCS3/CT2,
+          the requirements for ARCP are specified by the ACCS TPD. Check the box below for a summary.
+          <form class="form" autocomplete="off">
+            <div class="control-group">
+              <div class="controls">
+                <label class="checkbox">
+                  <input id="accsBox" v-model="accs" type="checkbox" />
+                  Show ACCS Guidance
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div v-if="name === 2021 && accs === false" class="container mt-4">
           <ChooseYear />
         </div>
-        <div v-if="name === 2010" class="container mt-4">
+        <div v-if="name === 2010 && accs === false" class="container mt-4">
           <ChooseYearOld />
         </div>
-        <div class="alert alert-success mt-3 mb-5">
+        <div v-if="accs === false" class="alert alert-success mt-3 mb-5">
           <strong>LTFT</strong>
           <br />
           Specific guidance for those training less than full time is available.
@@ -43,7 +55,7 @@
               </div>
             </div>
           </form>
-          <div v-if="ltft" class="LTFT">
+          <div v-if="ltft && !accs" class="LTFT">
             <p>
               A summary of training is required at ARCP for those training less than full time. Additional LTFT guidance
               will be shown in green boxes below.
@@ -82,7 +94,7 @@
             </blockquote>
           </div>
         </div>
-        <div v-if="somethingChosen()" class="mt-4">
+        <div v-if="somethingChosen() && !accs" class="mt-4">
           Completion of training in anaesthesia involves satisfying the requirements of the North West School of
           Anaesthesia, the Royal College of Anaesthetists and the General Medical Council.
           <!-- The introduction of both a new Curriculum and an electronic Portfolio has led to changes in the way trainees collect and present evidence for review at ARCP. -->
@@ -100,18 +112,14 @@
           <ul v-if="name === 2010 && somethingChosen()">
             <li class="p-1">
               Core level:
-              <a
-                href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.doc"
-                class="btn btn-outline-secondary btn-sm"
-              >
+              <a href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.doc"
+                class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a
-                href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.pdf"
-                class="btn btn-outline-secondary btn-sm"
-              >
+              <a href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.pdf"
+                class="btn btn-outline-secondary btn-sm">
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
@@ -197,13 +205,56 @@
         </div>
       </div>
 
-      <div v-if="name === 2010 && somethingChosen()">
+      <div v-if="name === 2010 && somethingChosen() && !accs">
         <Curr2010 :ltft="ltft" />
       </div>
 
-      <div v-if="name === 2021 && somethingChosen()">
+      <div v-if="name === 2021 && somethingChosen() && !accs">
         <Curr2021 :ltft="ltft" />
       </div>
+
+      <div v-if="accs">
+        <div class="container mt-4 alert alert-danger">
+          <h2>ACCS</h2>
+          <h4>Summary of Requirements</h4>
+          <p>
+            The ACCS curriculum is a 3-year programme that includes 12 months of anaesthesia training. The ARCP
+            requirements for the first two years of ACCS are set by the ACCS TPD. The requirements for the anaesthesia
+            year are the same as for CT2.
+          </p>
+          <p>
+            The ACCS TPD has provided a summary of the requirements for ARCP in the first two years of ACCS. This is
+            available to download here:
+            <a href="ACCS%20ARCP%20Requirement%20Guide.pdf" class="btn btn-outline-secondary btn-sm">
+              <font-awesome-icon icon="download" />
+              .pdf
+            </a>
+          </p>
+          <h4>End of Placement</h4>
+          <p>
+            The End of placement form, completed by the Educational Supervisor for an ACCS2 trainee, is required at the
+            end of ICM and Anaesthesia placements: this may be two different supervisors.
+            <a href="ACCS%20End%20of%20placement%20report.docx" class="btn btn-outline-secondary btn-sm">
+              <font-awesome-icon icon="download" />
+              .docx
+            </a>
+          </p>
+          <h4>End of Year</h4>
+          <p>
+            The ESSR End of Year form, which the Anaesthesia Overarching Educational Supervisor needs to complete at the
+            end of each training year for ACCS 1 and 2 is here:
+            <a href="ACCS%20Educational%20Supervisors%20End%20of%20year%20report.docx"
+              class="btn btn-outline-secondary btn-sm">
+              <font-awesome-icon icon="download" />
+              .docx
+            </a>
+          </p>
+
+
+
+        </div>
+      </div>
+
     </main>
     <FooterInfo />
     <DetailsModal />
@@ -227,6 +278,7 @@ export default {
     return {
       name: 2021,
       ltft: false,
+      accs: false,
     };
   },
   methods: {
