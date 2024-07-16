@@ -1351,21 +1351,15 @@
                 <p>
                   All trainees attending an ARCP will need to complete an
                   <em>Enhanced Form R for Doctors In Training (Self-Declaration)</em>
-                  form as part of the revalidation process. This is now available as an online form at the Deanery
-                  website.
+                  form as part of the revalidation process. Please note that you must submit your Form R via <a href="https://trainee.tis.nhs.uk/">TIS self-service (TSS)</a> and save a copy into your ePortfolio.
                 </p>
                 <strong>Item</strong>
                 <blockquote>
-                  <a href="https://www.nwpgmd.nhs.uk/form-r-part-a" class="btn btn-outline-secondary btn-sm">
+                  Form R Part A and Part B submitted via TIS.  More information and guidance about submission is availble at the
+                  <a href="https://www.nwpgmd.nhs.uk/form-r" class="btn btn-outline-secondary btn-sm">
                     <i class="icon-arrow-right"></i>
-                    Part A
-                  </a>
-                  and
-                  <a href="https://www.nwpgmd.nhs.uk/form-r-part-b" class="btn btn-outline-secondary btn-sm">
-                    <i class="icon-arrow-right"></i>
-                    Part B
-                  </a>
-                  at the Deanery website.
+                    Deanery website
+                  </a>.
                 </blockquote>
                 <strong>Frequency</strong>
                 <blockquote>
@@ -1391,7 +1385,7 @@
                 <blockquote>
                   Named with the year of your ARCP in the format:
                   <br />
-                  <code>Revalidation - 2014 - Form R</code>
+                  <code>Revalidation - 2024 - Form R</code>
                 </blockquote>
                 <strong>Notes for Completion</strong>
                 <blockquote>
