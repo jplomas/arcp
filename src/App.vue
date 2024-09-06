@@ -9,8 +9,12 @@
             <strong>{{ name }}</strong>
           </div>
           <div class="btn-group dropend">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Choose Curriculum
             </button>
             <ul class="dropdown-menu">
@@ -57,40 +61,34 @@
           </form>
           <div v-if="ltft && !accs" class="LTFT">
             <p>
-              A summary of training is required at ARCP for those training less than full time. Additional LTFT guidance
-              will be shown in green boxes below.
+              A CCT calculator document is required at ARCP for those training less than full time. Additional LTFT
+              guidance will be shown in green boxes in the sections below.
             </p>
             <strong>Item</strong>
             <blockquote>
-              LTFT summary document:
-              <a href="LTFT%20form.docx" class="btn btn-outline-secondary btn-sm">
-                <font-awesome-icon icon="download" />
-                .doc
-              </a>
-              &nbsp;
-              <a href="LTFT%20form.pdf" class="btn btn-outline-secondary btn-sm">
-                <font-awesome-icon icon="download" />
-                .pdf
-              </a>
+              CCT calculator
+              <br />
+              <font-awesome-icon icon="triangle-exclamation" />
+              <small>&nbsp;if you do not have this document, please contact your TPD/LTFT TPD</small>
             </blockquote>
             <strong>Frequency</strong>
-            <blockquote>One summary per ARCP.</blockquote>
+            <blockquote>One CCT calculator per ARCP.</blockquote>
             <strong>Format</strong>
             <blockquote>
               Uploaded to the LLP document store.
-              <br />
-              &nbsp; &nbsp;
               <em>
-                It is recommended that all documentation uploaded to the LLP is done by adding a 'Personal Activity'.
-                Using the 'Document Store' does not link to units of training and may mean the files are unavailable at
-                ARCP.
+                <blockquote>
+                  It is recommended that all documentation uploaded to the LLP is done by adding a 'Personal Activity'.
+                  Using the 'Document Store' does not link to units of training and may mean the files are unavailable
+                  at ARCP.
+                </blockquote>
               </em>
             </blockquote>
             <strong>Title</strong>
             <blockquote>
               Named with the month and year of your ARCP in the format:
               <br />
-              <code>Evidence - LTFT Summary - July 2018</code>
+              <code>Evidence - LTFT CCT calculator - July 2024</code>
             </blockquote>
           </div>
         </div>
@@ -112,14 +110,18 @@
           <ul v-if="name === 2010 && somethingChosen()">
             <li class="p-1">
               Core level:
-              <a href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.doc"
-                class="btn btn-outline-secondary btn-sm">
+              <a
+                href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.doc"
+                class="btn btn-outline-secondary btn-sm"
+              >
                 <font-awesome-icon icon="download" />
                 .doc
               </a>
               &nbsp;
-              <a href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.pdf"
-                class="btn btn-outline-secondary btn-sm">
+              <a
+                href="Panel%20A%20proforma%20CT%20training%20-%20June%2016.pdf"
+                class="btn btn-outline-secondary btn-sm"
+              >
                 <font-awesome-icon icon="download" />
                 .pdf
               </a>
@@ -243,18 +245,16 @@
           <p>
             The ESSR End of Year form, which the Anaesthesia Overarching Educational Supervisor needs to complete at the
             end of each training year for ACCS 1 and 2 is here:
-            <a href="ACCS%20Educational%20Supervisors%20End%20of%20year%20report.docx"
-              class="btn btn-outline-secondary btn-sm">
+            <a
+              href="ACCS%20Educational%20Supervisors%20End%20of%20year%20report.docx"
+              class="btn btn-outline-secondary btn-sm"
+            >
               <font-awesome-icon icon="download" />
               .docx
             </a>
           </p>
-
-
-
         </div>
       </div>
-
     </main>
     <FooterInfo />
     <DetailsModal />
