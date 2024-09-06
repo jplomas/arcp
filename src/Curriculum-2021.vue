@@ -841,7 +841,63 @@
           </div>
         </div>
         <!-- /MSF -->
-
+        <!-- Audit, QI & Clinical Governance -->
+        <div class="card">
+          <div id="headingFourteen" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" class="card-header">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-link collapsed p-0 text-left nti"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFourteen"
+                aria-expanded="false"
+                aria-controls="collapseFourteen"
+              >
+                <span class="when-opened">
+                  <font-awesome-icon icon="caret-down" />
+                </span>
+                <span class="when-closed">
+                  <font-awesome-icon icon="caret-right" />
+                </span>
+                Audit, QI & Clinical Governance
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseFourteen"
+            class="collapse"
+            aria-labelledby="headingFourteen"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="card-body">
+              <div>
+                <div v-if="ltft">
+                  <div class="alert alert-success">
+                    <strong>LTFT</strong>
+                    <br />
+                    Same requirements as full-time colleagues.
+                  </div>
+                </div>
+                <code v-if="toShow('CT1')" class="year">CT1</code>
+                <code v-if="toShow('CT2')" class="year">CT2</code>
+                <code v-if="toShow('CT3')" class="year">CT3</code>
+                <code v-if="toShow('ST4')" class="year">ST4</code>
+                <code v-if="toShow('ST5')" class="year">ST5</code>
+                <code v-if="toShow('ST6')" class="year">ST6</code>
+                <code v-if="toShow('ST7')" class="year">ST7</code>
+                <br />
+                <br />
+                <strong>Requirements</strong>
+                <blockquote>
+                  A significant Audit or QI project must be completed for each Stage of Training. However, involvement
+                  in Clinical Governance must be evidenced at each ARCP. Please see section on HALOs (Safety and Quality
+                  Improvement) for more detail.
+                </blockquote>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /Audit, QI & Clinical Governance -->
         <!-- Reflective Practice -->
         <div class="card">
           <div id="headingThirteen" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" class="card-header">
@@ -1014,7 +1070,7 @@
         </div>
         <!-- /Logbook -->
         <!-- CV -->
-        <div v-if="toShow('ST6 ST6')" class="card">
+        <div v-if="toShow('CT2 ST5 ST6')" class="card">
           <div id="headingSix" data-bs-toggle="collapse" data-bs-target="#collapseSix" class="card-header">
             <h5 class="mb-0">
               <button
@@ -1045,35 +1101,53 @@
                     Your up-to-date CV must be uploaded prior to each ARCP.
                   </div>
                 </div>
+                <code v-if="toShow('CT2')" class="year">CT2</code>
+                <code v-if="toShow('ST5')" class="year">ST5</code>
                 <code v-if="toShow('ST6')" class="year">ST6</code>
-                <code v-if="toShow('ST7')" class="year">ST7</code>
                 <br />
                 <br />
-                <strong>Item</strong>
-                <blockquote>Your up-to-date CV</blockquote>
-                <strong>Format</strong>
-                <blockquote>
-                  PDF or Word document uploaded to the LLP.
-                  <br />
-                  <br />
-                  <em>
-                    It is recommended that all documentation uploaded to the LLP for review by the ARCP panel is added
-                    as a 'Personal Activity'.
-                  </em>
-                  <br />
-                  <div class="ST7 bg-light p-3 mb-3 mt-3">
-                    <i class="icon-warning-sign"></i>
-                    For your final ARCP, it is strongly advised that you bring a paper copy of your CV in order to fill
-                    in the Completion of Training form.
-                  </div>
-                </blockquote>
-                <strong>Title</strong>
-                <blockquote>
-                  Named with the year of update in the format:
-                  <code>Evidence - CV - 2021</code>
-                </blockquote>
-                <strong>Frequency</strong>
-                <blockquote>Once per year.</blockquote>
+                <div v-if="toShow('ST5 ST6')">
+                  <strong>Item</strong>
+                  <blockquote>Your up-to-date CV</blockquote>
+                  <strong>Format</strong>
+                  <blockquote>
+                    PDF or Word document uploaded to the LLP.
+                    <br />
+                    <br />
+                    <em>
+                      It is recommended that all documentation uploaded to the LLP for review by the ARCP panel is added
+                      as a 'Personal Activity'.
+                    </em>
+                  </blockquote>
+                  <strong>Title</strong>
+                  <blockquote>
+                    Named with the year of update in the format:
+                    <code>Evidence - CV - 2024</code>
+                  </blockquote>
+                </div>
+                <div v-if="toShow('CT2')">
+                  <strong>Item</strong>
+                  <blockquote>ST4 Applications Portfolio Proforma</blockquote>
+                  <strong>Format</strong>
+                  <blockquote>
+                    Template document:
+                    <a href="ARCP%20ST4%20Portfolio%20proforma.xlsx" class="btn btn-outline-secondary btn-sm">
+                      <i class="icon-download-alt"></i>
+                      .xlsx
+                    </a>
+                    <br />
+                    <br />
+                    <em>
+                      It is recommended that all documentation uploaded to the LLP for review by the ARCP panel is added
+                      as a 'Personal Activity'.
+                    </em>
+                  </blockquote>
+                  <strong>Title</strong>
+                  <blockquote>
+                    Named with the year of update in the format:
+                    <code>Evidence - ST4 Portfolio - 2024</code>
+                  </blockquote>
+                </div>
               </div>
             </div>
           </div>
@@ -1351,15 +1425,19 @@
                 <p>
                   All trainees attending an ARCP will need to complete an
                   <em>Enhanced Form R for Doctors In Training (Self-Declaration)</em>
-                  form as part of the revalidation process. Please note that you must submit your Form R via <a href="https://trainee.tis.nhs.uk/">TIS self-service (TSS)</a> and save a copy into your ePortfolio.
+                  form as part of the revalidation process. Please note that you must submit your Form R via
+                  <a href="https://trainee.tis.nhs.uk/">TIS self-service (TSS)</a>
+                  and save a copy into your ePortfolio.
                 </p>
                 <strong>Item</strong>
                 <blockquote>
-                  Form R Part A and Part B submitted via TIS.  More information and guidance about submission is availble at the
+                  Form R Part A and Part B submitted via TIS. More information and guidance about submission is availble
+                  at the
                   <a href="https://www.nwpgmd.nhs.uk/form-r" class="btn btn-outline-secondary btn-sm">
                     <i class="icon-arrow-right"></i>
                     Deanery website
-                  </a>.
+                  </a>
+                  .
                 </blockquote>
                 <strong>Frequency</strong>
                 <blockquote>
@@ -1398,6 +1476,7 @@
           </div>
         </div>
         <!-- /Revalidation -->
+
         <!-- Feedback -->
         <div class="card">
           <div id="headingSixteen" data-bs-toggle="collapse" data-bs-target="#collapseSixteen" class="card-header">
