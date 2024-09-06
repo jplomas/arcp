@@ -41,6 +41,7 @@ const store = createStore({
   state() {
     return {
       items: -1,
+      ltft: false,
     };
   },
 });

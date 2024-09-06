@@ -190,7 +190,7 @@
                       <td>1. Audit with recognisable standards (eg. audit recipe book)</td>
                       <td>
                         A-QIPAT form
-                        <super>*</super>
+                        <sup>*</sup>
                       </td>
                     </tr>
 
@@ -198,7 +198,7 @@
                       <td>2. Re-audit to close the audit loop</td>
                       <td>
                         A-QIPAT form
-                        <super>*</super>
+                        <sup>*</sup>
                       </td>
                     </tr>
 
@@ -211,7 +211,7 @@
                       <td>4. Contribution to quality assurance/improvement programs</td>
                       <td>
                         A-QIPAT form
-                        <super>*</super>
+                        <sup>*</sup>
                       </td>
                     </tr>
 
@@ -232,12 +232,12 @@
                   recommended that
                   <strong>at least one audit or QI project</strong>
                   (with associated A-QIPAT form
-                  <super>*</super>
+                  <sup>*</sup>
                   ) is completed
                   <strong>per year</strong>
                   of training.
                 </div>
-                <super>*</super>
+                <sup>*</sup>
                 A-QIPAT forms can be found on the LLP as an SLE or the form can be
                 <a href="https://www.rcoa.ac.uk/sites/default/files/documents/2021-07/A-QIPAT%20v1.1.pdf">
                   downloaded from the RCoA website
@@ -320,7 +320,7 @@
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -434,7 +434,7 @@
           <div id="collapseOneBee" class="collapse" aria-labelledby="headingOneBee" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -514,7 +514,7 @@
           <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -794,7 +794,7 @@
           <div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -871,7 +871,7 @@
           >
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -928,7 +928,7 @@
           >
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -1016,7 +1016,7 @@
           <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -1094,7 +1094,7 @@
           <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -1324,7 +1324,7 @@
           <div id="collapseTwelve" class="collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -1507,7 +1507,7 @@
           >
             <div class="card-body">
               <div>
-                <div v-if="ltft">
+                <div v-if="isLTFT()">
                   <div class="alert alert-success">
                     <strong>LTFT</strong>
                     <br />
@@ -1576,10 +1576,13 @@ export default {
   },
   data() {
     return {
-      ltft: false,
+      ltft: this.$props.ltft,
     };
   },
   methods: {
+    isLTFT() {
+      return this.$store.state.ltft;
+    },
     toShow(years) {
       let show = false;
       const yearsArray = years.split(' ');

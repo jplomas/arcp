@@ -49,7 +49,7 @@
             <div class="control-group">
               <div class="controls">
                 <label class="checkbox">
-                  <input id="ltftBox" v-model="ltft" type="checkbox" />
+                  <input id="ltftBox" v-model="ltft" type="checkbox" @click="setLTFTState()" />
                   Show LTFT Guidance
                 </label>
               </div>
@@ -282,6 +282,13 @@ export default {
     };
   },
   methods: {
+    setLTFTState() {
+      if (this.ltft) {
+        this.$store.state.ltft = false;
+      } else {
+        this.$store.state.ltft = true;
+      }
+    },
     choose(name) {
       if (this.name !== name) {
         this.$store.state.items = -1;

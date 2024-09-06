@@ -20,7 +20,7 @@
             <dt>6th September 2024</dt>
             <dd>
               CV section changes, particularly for CT2 grades. Also clarification around audit/QI and clinical
-              governance added as separate main section. Feedback link changed to new MMACC site.
+              governance added as separate main section. Feedback link changed to new MMACC site and fixes to LTFT info display also made.
             </dd>
             <dt>16th July 2024</dt>
             <dd>Form R links changed and TIS information added (thanks to Dr P Wilson for flagging!)</dd>
