@@ -11,12 +11,15 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 id="exampleModalLongTitle" class="modal-title">Document updates</h5>
-          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"><font-awesome-icon icon="x" /></span>
-          </button>
+            <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <dl>
+            <dt>12th November 2025</dt>
+            <dd>
+              Emphasis within the Curriculum 2021 section that HALO evidence must be present in each capability or capability
+              cluster before submission for sign-off.
+            </dd>
             <dt>6th September 2024</dt>
             <dd>
               CV section changes, particularly for CT2 grades. Also clarification around audit/QI and clinical

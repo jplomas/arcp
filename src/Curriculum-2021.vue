@@ -36,6 +36,15 @@
                 Evidence is required of HALO progress in each of the seven GPC and seven specialty-specific clinical
                 domains. The same evidence can be referenced to multiple domains. Examples of the possible types of
                 evidence are detailed below and additional information is available within the LLP.
+                          <div class="alert bg-warning p-3 mb-3 mt-3">
+            <strong>
+              <font-awesome-icon icon="triangle-exclamation" />
+              IMPORTANT
+            </strong>
+            <br />
+            There <strong>must</strong> be evidence present in each capability or capability cluster, so that the capability
+            or capability cluster is ‘black’ rather than grey-ed out, <strong>before</strong> sending the HALO for sign off.
+            </div>
                 <br />
                 <br />
               </div>
