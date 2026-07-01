@@ -15,6 +15,12 @@
         </div>
         <div class="modal-body">
           <dl>
+            <dt>1st July 2026</dt>
+            <dd>
+              Reflection guidance reworded and clarified across both curriculum sections, including that the
+              Educational Supervisor must document reflective discussion in the ESSR. Added a note on the ethical,
+              governance, confidentiality and professionalism considerations of using AI tools in reflection.
+            </dd>
             <dt>12th November 2025</dt>
             <dd>
               Emphasis within the Curriculum 2021 section that HALO evidence must be present in each capability or capability
