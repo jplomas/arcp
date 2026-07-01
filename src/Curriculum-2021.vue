@@ -955,13 +955,20 @@
                 <br />
                 <strong>Requirements</strong>
                 <blockquote>
-                  There is no minimum requirement for number of reflections. The School, College and GMC emphasise the
-                  importance of reflection for professional development and it is a requirement for revalidation
-                  throughout your career. There needs to be evidence within your ePortfolio that reflection has occurred
-                  and discussed with your educational supervisor. There should be specific reflections within your
-                  ePortfolio for any Serious Untoward Incidents (SUIs) in which you are named and anything referenced on
-                  your Form R. Remember reflections could include 'positive' events: compliments, thank-you cards and
-                  stand-out educational experiences. For more information, see the
+                  The School, College and GMC all emphasise the importance of reflection for professional development.
+                  Reflection is also a requirement for revalidation throughout your career.
+                  <br />
+                  <br />
+                  Your ePortfolio should contain evidence that reflection has taken place and that this has been
+                  discussed with your Educational Supervisor. Your Educational Supervisor must document this in your
+                  ESSR. The content of reflective discussions does not need to be recorded in detail on the LLP.
+                  <br />
+                  <br />
+                  If you have been involved in any Serious Untoward Incidents, or any other events declared on your Form
+                  R, you should complete a specific reflective piece for each event and upload it to the LLP.
+                  <br />
+                  <br />
+                  For further guidance, see the
                   <!-- eslint-disable -->
                   <a
                     href="http://www.aomrc.org.uk/wp-content/uploads/2018/09/the_reflective_practioner_guidance_single_page.pdf"
@@ -971,6 +978,19 @@
                     AoMRC reflective toolkit
                   </a>
                 </blockquote>
+                <div class="alert alert-warning">
+                  <strong>AI use in reflection</strong>
+                  <br />
+                  <br />
+                  There are ethical, governance, confidentiality and professionalism considerations when AI tools are
+                  used in reflection. Please see
+                  <!-- eslint-disable -->
+                  <a href="https://www.appraisal.nes.scot.nhs.uk/media/ywrj0mnb/ai-in-appraisal-and-revalidation-v10.pdf">
+                    <!-- eslint-enable -->
+                    this document
+                  </a>
+                  and declare AI use where appropriate.
+                </div>
                 <strong>Format</strong>
                 <blockquote>Via LLP only.</blockquote>
                 <strong>Note</strong>
